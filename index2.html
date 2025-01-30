@@ -6,24 +6,29 @@
     <title>Background Image</title>
     <style>
       .image-container {
-        /* background-image: url("1.jpg"); */
-        /* height: 500px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative; */
-        background-color: red;
         height: 1000px;
         width: 100vw;
         background-image: url("5.png");
         background-size: cover;
         background-position: 0% 30%;
+        display: grid;
+        grid-template-columns: minmax(800px, 1fr) 1fr; /* คอลัมน์แรกต้องมีขนาดขั้นต่ำ 800px */
+      }
+      .box {
+        background-color: red;
+        grid-column: 1; /* ให้ทุกกล่องอยู่ในคอลัมน์ที่ 1 */
+      }
+      /* 📌 Media Query สำหรับหน้าจอที่เล็กกว่า 800px */
+      @media screen and (max-width: 800px) {
+        .image-container {
+          grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ */
+        }
       }
     </style>
   </head>
   <body>
     <div class="image-container">
-      <!-- รูปจะถูกแสดงที่นี่ -->
+      <div class="box">1</div>
     </div>
   </body>
 </html>

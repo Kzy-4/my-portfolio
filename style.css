@@ -42,6 +42,9 @@
     color: gray; /* สีของไอคอนเมนู */
     padding: 10px; /* เพิ่มขนาดพื้นที่รอบไอคอน */
   }
+  .image-container {
+    grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ */
+  }
 }
 
 /* แสดงเมนูปกติเมื่อหน้าจอใหญ่กว่า 800px */
@@ -59,4 +62,11 @@
   background-image: url("5.png");
   background-size: cover;
   background-position: 0% 15%;
+  display: grid;
+  grid-template-columns: minmax(800px, 1fr) 1fr; /* คอลัมน์แรกต้องมีขนาดขั้นต่ำ 800px */
+}
+
+.Introduction {
+  background-color: red;
+  grid-column: 1; /* ให้ทุกกล่องอยู่ในคอลัมน์ที่ 1 */
 }
