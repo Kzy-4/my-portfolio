@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Background Image</title>
     <style>
+      body {
+        font-family: "Fira Code", "JetBrains Mono", "IBM Plex Mono", monospace;
+      }
       .image-container {
         height: 100vh;
         width: 100vw;
@@ -23,44 +26,45 @@
         height: 100%; /* ให้กล่องขยายเต็ม container */
         place-items: center; /* จัดให้อยู่กลางทั้งแนวนอนและแนวตั้ง */
         color: white;
-        background-color: red;
       }
 
       .section {
         display: flex;
         align-items: center;
         text-align: left;
-        border: 2px solid black;
       }
 
       /* 📝 ปรับขนาดตัวอักษรให้ใกล้เคียงกับภาพ */
       .section:nth-child(2) {
-        font-size: 80px; /* ขนาดของ "Hi, I AM" */
+        font-size: 70px; /* ขนาดของ "Hi, I AM" */
         font-weight: lighter;
       }
 
       .section:nth-child(3) {
-        font-size: 100px; /* ขนาดของ "SUPANUT KHUMDUANG" */
+        font-size: 90px; /* ขนาดของ "SUPANUT KHUMDUANG" */
         font-weight: bold;
         color: rgba(29, 43, 240, 0.9); /* สีฟ้าอ่อนใกล้เคียงกับในภาพ */
       }
 
       .section:nth-child(4) {
-        font-size: 70px; /* ขนาดของ "Software Engineer" */
+        font-size: 60px; /* ขนาดของ "Software Engineer" */
         font-weight: normal;
       }
 
       @media screen and (max-width: 1300px) {
+        .image-container {
+          grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ */
+        }
         .section:nth-child(2) {
-          font-size: 60px; /* ปรับขนาดลงให้เหมาะกับจอเล็ก */
+          font-size: 55px; /* ปรับขนาดลงให้เหมาะกับจอเล็ก */
         }
 
         .section:nth-child(3) {
-          font-size: 80px;
+          font-size: 70px;
         }
 
         .section:nth-child(4) {
-          font-size: 50px;
+          font-size: 45px;
         }
       }
 
@@ -79,7 +83,7 @@
         }
 
         .section:nth-child(3) {
-          font-size: 50px;
+          font-size: 45px;
         }
 
         .section:nth-child(4) {
@@ -93,11 +97,48 @@
       <div class="box">
         <div class="section"></div>
         <div class="section">Hi , I AM</div>
-        <div class="section">Supanut Khamduang</div>
-        <div class="section">Software Engineer</div>
+        <div class="section">Supanut Khumduang</div>
+        <div class="section" id="text">Software Engineer</div>
         <div class="section"></div>
         <div class="section"></div>
       </div>
     </div>
+    <script>
+      const words = [
+        "Software Engineer",
+        "Control systems and Instrument Engineer",
+        "Web Developer",
+      ]; // คำที่ต้องการวนซ้ำ
+      let wordIndex = 0; // เก็บ index ของคำที่กำลังพิมพ์
+      let charIndex = 0; // เก็บ index ของตัวอักษรที่กำลังพิมพ์
+      let direction = 1; // 1 = forward (พิมพ์), -1 = backward (ลบ)
+      const textElement = document.getElementById("text");
+
+      function typeEffect() {
+        const currentWord = words[wordIndex];
+
+        if (direction === 1) {
+          if (charIndex < currentWord.length) {
+            textElement.innerText = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+          } else {
+            direction = -1; // เปลี่ยนเป็นลบข้อความ
+            setTimeout(typeEffect, 2000); // หยุด 2 วินาทีก่อนเริ่มลบ
+            return;
+          }
+        } else {
+          if (charIndex > 0) {
+            textElement.innerText = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+          } else {
+            direction = 1; // เปลี่ยนเป็นพิมพ์คำใหม่
+            wordIndex = (wordIndex + 1) % words.length; // วนไปคำถัดไป
+          }
+        }
+        setTimeout(typeEffect, 150); // ความเร็วในการพิมพ์/ลบ
+      }
+
+      typeEffect(); // เริ่มพิมพ์
+    </script>
   </body>
 </html>
