@@ -1,0 +1,53 @@
+/* กำหนดสไตล์ของคอนเทนเนอร์ให้เป็น Navigation Bar */
+.container {
+  width: 100%; /* ทำให้คอนเทนเนอร์ยาวเต็มหน้าจอ */
+  height: 60px; /* กำหนดความสูงของ Navigation Bar */
+  background-color: white; /* เปลี่ยนพื้นหลังเป็นสีขาว */
+  display: flex; /* ใช้ Flexbox */
+  position: fixed; /* ทำให้ติดอยู่ด้านบนของหน้าจอ */
+  top: 0; /* กำหนดให้คอนเทนเนอร์อยู่ด้านบน */
+  left: 0; /* กำหนดให้เริ่มจากด้านซ้ายสุดของหน้าจอ */
+  z-index: 1000; /* ทำให้ Navigation Bar อยู่เหนือองค์ประกอบอื่น */
+  justify-content: space-evenly; /* จัดให้กล่องแต่ละอันมีระยะห่างเท่าๆ กัน */
+  align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+}
+/* กำหนดสไตล์ของกล่องทั่วไป */
+.box {
+  font-size: 16px;
+  font-weight: bold;
+  color: gray; /* เปลี่ยนสีตัวอักษรเป็นสีเทา */
+}
+.box.supanut {
+  font-size: 24px; /* ทำให้ตัวอักษรใหญ่ขึ้น */
+  color: rgb(29, 43, 240); /* เปลี่ยนสีตัวอักษรเป็นสีม่วง */
+  font-weight: bold; /* ทำให้ตัวอักษรหนา */
+  padding-left: 40px;
+}
+.menu {
+  width: 100%;
+  display: flex; /* ใช้ Flexbox */
+  justify-content: space-evenly; /* จัดให้กล่องแต่ละอันมีระยะห่างเท่าๆ กัน */
+  align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+}
+
+/* ซ่อนเมนูเมื่อหน้าจอเล็กกว่า 800px และแสดงไอคอนเมนูแทน */
+@media screen and (max-width: 800px) {
+  .menu {
+    display: none; /* ซ่อนเมนูหลัก */
+  }
+  .menu-icon {
+    display: block; /* แสดงไอคอนเมนู */
+    font-size: 24px; /* ขนาดไอคอน */
+    color: rgb(255, 0, 255); /* สีของไอคอนเมนู */
+    border: 2px solid rgb(255, 0, 255); /* กำหนดขอบของไอคอน */
+    padding: 10px; /* เพิ่มขนาดพื้นที่รอบไอคอน */
+    border-radius: 5px; /* ทำให้ขอบโค้งมน */
+  }
+}
+
+/* แสดงเมนูปกติเมื่อหน้าจอใหญ่กว่า 800px */
+@media screen and (min-width: 801px) {
+  .menu-icon {
+    display: none; /* ซ่อนไอคอนเมนู เมื่ออยู่ในหน้าจอใหญ่ */
+  }
+}
