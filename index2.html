@@ -6,29 +6,98 @@
     <title>Background Image</title>
     <style>
       .image-container {
-        height: 1000px;
+        height: 100vh;
         width: 100vw;
         background-image: url("5.png");
         background-size: cover;
         background-position: 0% 30%;
         display: grid;
-        grid-template-columns: minmax(800px, 1fr) 1fr; /* คอลัมน์แรกต้องมีขนาดขั้นต่ำ 800px */
+        grid-template-columns: minmax(800px, 1400px) 1fr; /* คอลัมน์แรกต้องมีขนาดขั้นต่ำ 800px */
+        align-items: center; /* จัดตำแหน่งให้อยู่กลางแนวตั้ง */
       }
+
       .box {
+        display: grid;
+        grid-template-rows: repeat(6, 1fr); /* แบ่งกล่องเป็น 6 ส่วน */
+        width: 100%; /* ให้กล่องขยายเต็มคอลัมน์ */
+        height: 100%; /* ให้กล่องขยายเต็ม container */
+        place-items: center; /* จัดให้อยู่กลางทั้งแนวนอนและแนวตั้ง */
+        color: white;
         background-color: red;
-        grid-column: 1; /* ให้ทุกกล่องอยู่ในคอลัมน์ที่ 1 */
       }
+
+      .section {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        border: 2px solid black;
+      }
+
+      /* 📝 ปรับขนาดตัวอักษรให้ใกล้เคียงกับภาพ */
+      .section:nth-child(2) {
+        font-size: 80px; /* ขนาดของ "Hi, I AM" */
+        font-weight: lighter;
+      }
+
+      .section:nth-child(3) {
+        font-size: 100px; /* ขนาดของ "SUPANUT KHUMDUANG" */
+        font-weight: bold;
+        color: rgba(29, 43, 240, 0.9); /* สีฟ้าอ่อนใกล้เคียงกับในภาพ */
+      }
+
+      .section:nth-child(4) {
+        font-size: 70px; /* ขนาดของ "Software Engineer" */
+        font-weight: normal;
+      }
+
+      @media screen and (max-width: 1300px) {
+        .section:nth-child(2) {
+          font-size: 60px; /* ปรับขนาดลงให้เหมาะกับจอเล็ก */
+        }
+
+        .section:nth-child(3) {
+          font-size: 80px;
+        }
+
+        .section:nth-child(4) {
+          font-size: 50px;
+        }
+      }
+
       /* 📌 Media Query สำหรับหน้าจอที่เล็กกว่า 800px */
       @media screen and (max-width: 800px) {
         .image-container {
           grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ */
+        }
+
+        .box {
+          padding-left: 20px; /* ลดระยะห่าง */
+        }
+
+        .section:nth-child(2) {
+          font-size: 30px; /* ปรับขนาดลงให้เหมาะกับจอเล็ก */
+        }
+
+        .section:nth-child(3) {
+          font-size: 50px;
+        }
+
+        .section:nth-child(4) {
+          font-size: 24px;
         }
       }
     </style>
   </head>
   <body>
     <div class="image-container">
-      <div class="box">1</div>
+      <div class="box">
+        <div class="section"></div>
+        <div class="section">Hi , I AM</div>
+        <div class="section">Supanut Khamduang</div>
+        <div class="section">Software Engineer</div>
+        <div class="section"></div>
+        <div class="section"></div>
+      </div>
     </div>
   </body>
 </html>
