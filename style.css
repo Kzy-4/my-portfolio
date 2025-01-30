@@ -10,6 +10,7 @@
   z-index: 1000; /* ทำให้ Navigation Bar อยู่เหนือองค์ประกอบอื่น */
   justify-content: space-evenly; /* จัดให้กล่องแต่ละอันมีระยะห่างเท่าๆ กัน */
   align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+  border-bottom: 1px solid rgb(1, 1, 31);
 }
 /* กำหนดสไตล์ของกล่องทั่วไป */
 .box {
@@ -48,4 +49,14 @@
   .menu-icon {
     display: none; /* ซ่อนไอคอนเมนู เมื่ออยู่ในหน้าจอใหญ่ */
   }
+}
+
+/* รูปภาพ */
+
+.image-container {
+  height: 1100px;
+  width: 100vw;
+  background-image: url("5.png");
+  background-size: cover;
+  background-position: 0% 15%;
 }
