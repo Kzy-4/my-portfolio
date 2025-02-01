@@ -19,7 +19,7 @@
         align-items: center; /* จัดตำแหน่งให้อยู่กลางแนวตั้ง */
       }
 
-      .box {
+      .image-box {
         display: grid;
         grid-template-rows: repeat(6, 1fr); /* แบ่งกล่องเป็น 6 ส่วน */
         width: 100%; /* ให้กล่องขยายเต็มคอลัมน์ */
@@ -28,7 +28,7 @@
         color: white;
       }
 
-      .section {
+      .image-section {
         display: flex;
         align-items: center;
         text-align: left;
@@ -55,15 +55,15 @@
         .image-container {
           grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ */
         }
-        .section:nth-child(2) {
+        .image-section:nth-child(2) {
           font-size: 55px; /* ปรับขนาดลงให้เหมาะกับจอเล็ก */
         }
 
-        .section:nth-child(3) {
+        .image-section:nth-child(3) {
           font-size: 70px;
         }
 
-        .section:nth-child(4) {
+        .image-section:nth-child(4) {
           font-size: 45px;
         }
       }
@@ -74,19 +74,15 @@
           grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ */
         }
 
-        .box {
-          padding-left: 20px; /* ลดระยะห่าง */
-        }
-
-        .section:nth-child(2) {
+        .image-section:nth-child(2) {
           font-size: 30px; /* ปรับขนาดลงให้เหมาะกับจอเล็ก */
         }
 
-        .section:nth-child(3) {
+        .image-section:nth-child(3) {
           font-size: 45px;
         }
 
-        .section:nth-child(4) {
+        .image-section:nth-child(4) {
           font-size: 24px;
         }
       }
