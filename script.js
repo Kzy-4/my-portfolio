@@ -15,8 +15,6 @@ function typeEffect() {
     if (charIndex < currentWord.length) {
       textElement.innerText = currentWord.substring(0, charIndex + 1);
       charIndex++;
-      // ปรับขนาดตัวอักษรขณะพิมพ์ข้อความ
-      textElement.style.fontSize = `${60 - charIndex / 3}px`; // เปลี่ยนตามการพิมพ์
     } else {
       direction = -1; // เปลี่ยนเป็นลบข้อความ
       setTimeout(typeEffect, 2000); // หยุด 2 วินาทีก่อนเริ่มลบ
