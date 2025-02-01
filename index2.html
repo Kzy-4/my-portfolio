@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Font Size with Smooth Transition</title>
+    <style>
+      /* ขนาดตัวอักษรเริ่มต้นที่ 1300px และกำหนด transition */
+      body {
+        font-size: 40px;
+        transition: font-size 0.5s ease; /* ทำให้การเปลี่ยนขนาดตัวอักษรมีความสมูท */
+      }
+
+      /* เมื่อขนาดหน้าจอมีความกว้างไม่เกิน 1300px */
+      @media screen and (max-width: 1300px) {
+        body {
+          font-size: 30px;
+        }
+      }
+
+      /* เมื่อขนาดหน้าจอมีความกว้างไม่เกิน 800px */
+      @media screen and (max-width: 800px) {
+        body {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Responsive Font Size Example</h1>
+    <p>
+      This text changes size based on the screen width with smooth transition.
+    </p>
+  </body>
+</html>
