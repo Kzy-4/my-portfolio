@@ -16,7 +16,8 @@ body {
   display: grid;
   grid-template-rows: auto 1fr; /* แถวที่ 1 = เกี่ยวกับฉัน, แถวที่ 2 = ส่วนล่าง */
   grid-template-columns: 7fr 5fr; /* คอลัมน์ที่ 1 (7fr) และ คอลัมน์ที่ 2 (5fr) */
-  gap: 20px; /* ระยะห่างระหว่างไอเท็มในกริด */
+  gap: 10px; /* ระยะห่างระหว่างไอเท็มในกริด */
+  padding: 0px 100px 0px 100px;
 }
 
 /* การจัดรูปแบบสำหรับส่วน "เกี่ยวกับฉัน" */
@@ -38,8 +39,12 @@ body {
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* จัดเนื้อหาชิดซ้าย */
+  width: 100%; /* ให้ขยายเต็มพื้นที่ */
+}
+.aboutme-paragraph,
+.contact-info {
+  align-self: flex-start; /* จัดเนื้อหาให้ชิดด้านบน */
 }
 .aboutme-paragraph {
   /* background-color: red; */
@@ -49,7 +54,7 @@ body {
 .aboutme-paragraph p {
   margin-bottom: 2px; /* เพิ่มระยะห่างระหว่างแต่ละ paragraph */
   text-indent: 40px; /* ย่อหน้าที่ด้านซ้าย 20px */
-  font-size: 20px;
+  font-size: 24px;
   color: #333333; /* สีของข้อความ */
 }
 
@@ -81,19 +86,29 @@ body {
 
 /* การจัดรูปแบบสำหรับ p */
 .contact-info-box p {
-  font-size: 16px;
+  font-size: 20px;
   color: #555; /* สีของข้อความ */
 }
 
 /* การจัดรูปแบบสำหรับส่วนขวา */
 .right-side {
   border-radius: 8px;
-  background-color: white;
+  background-color: #faf9ff;
+  display: flex;
+  flex-direction: column;
 }
 
 /* การจัดรูปแบบสำหรับรูปภาพในส่วนขวา */
-.right-side img {
-  max-width: 100%;
-  height: auto;
+.picture-profile {
+  width: auto; /* ให้รูปใช้ความกว้างเต็มพื้นที่ */
+  max-width: 528px; /* จำกัดขนาดความกว้างของรูป */
+  height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
+  margin: 0 auto; /* จัดให้อยู่กลาง */
+}
+
+.picture-profile img {
+  width: 100%; /* ทำให้รูปใช้ความกว้างเต็มพื้นที่ */
+  height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
+  object-fit: contain; /* ปรับให้รูปภาพไม่บิดเบี้ยวและอยู่ภายในกรอบ */
   border-radius: 8px; /* มุมโค้ง */
 }
