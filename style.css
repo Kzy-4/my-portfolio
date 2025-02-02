@@ -112,3 +112,47 @@ body {
   object-fit: contain; /* ปรับให้รูปภาพไม่บิดเบี้ยวและอยู่ภายในกรอบ */
   border-radius: 8px; /* มุมโค้ง */
 }
+
+/*******************************************ขนาดหน้าจอ****************************************/
+@media screen and (max-width: 1300px) {
+  .grid-container-aboutme {
+    padding: 0px 50px; /* ลดการ padding ข้าง */
+  }
+  .contact-info-box p {
+    /* ขนาดตัวอักษรใน info box ที่เป็นข้อมูล*/
+    font-size: 15px;
+  }
+  .contact-info-box h3 {
+    /* Heading*/
+    font-size: 15px;
+  }
+  .aboutme-paragraph p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  /* ซ่อน .right-side เมื่อหน้าจอเล็กกว่า 800px */
+  .right-side {
+    display: none;
+  }
+  /* ปรับขนาดให้ left-side ขยายเต็มที่ */
+  .grid-container-aboutme {
+    grid-template-columns: 1fr; /* ให้คอลัมน์เดียวสำหรับหน้าจอเล็ก */
+    padding: 0px 20px; /* ลดขนาด padding */
+  }
+  .left-side {
+    width: 100%; /* กินพื้นที่เต็มคอลัมน์ */
+  }
+  .aboutme-paragraph p {
+    font-size: 16px; /* ลดขนาดตัวอักษร */
+  }
+  .contact-info-box p {
+    /* ขนาดตัวอักษรใน info box ที่เป็นข้อมูล*/
+    font-size: 11px;
+  }
+  .contact-info-box h3 {
+    /* Heading*/
+    font-size: 11px;
+  }
+}
