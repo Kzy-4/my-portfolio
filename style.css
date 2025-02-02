@@ -136,7 +136,7 @@ body {
 .aboutme-paragraph p {
   margin-bottom: 2px; /* เพิ่มระยะห่างระหว่างแต่ละ paragraph */
   text-indent: 40px; /* ย่อหน้าที่ด้านซ้าย 20px */
-  font-size: 24px;
+  font-size: 30px;
   color: #333333; /* สีของข้อความ */
 }
 
@@ -161,14 +161,14 @@ body {
 
 /* การจัดรูปแบบสำหรับ h3 */
 .contact-info-box h3 {
-  font-size: 20px;
+  font-size: 28px;
   font-weight: bold;
   margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างหัวข้อกับเนื้อหา */
 }
 
 /* การจัดรูปแบบสำหรับ p */
 .contact-info-box p {
-  font-size: 20px;
+  font-size: 24px;
   color: #555; /* สีของข้อความ */
 }
 
@@ -183,7 +183,7 @@ body {
 /* การจัดรูปแบบสำหรับรูปภาพในส่วนขวา */
 .picture-profile {
   width: auto; /* ให้รูปใช้ความกว้างเต็มพื้นที่ */
-  max-width: 528px; /* จำกัดขนาดความกว้างของรูป */
+  max-width: 888px; /* จำกัดขนาดความกว้างของรูป */
   height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
   margin: 0 auto; /* จัดให้อยู่กลาง */
 }
@@ -212,6 +212,23 @@ body {
   .image-section:nth-child(4) {
     /* "Software Engineer" */
     font-size: 45px; /* ขนาดเล็ก */
+  }
+  .grid-container-aboutme {
+    padding: 0px 50px; /* ลดการ padding ข้าง */
+  }
+  .contact-info-box p {
+    /* ขนาดตัวอักษรใน info box ที่เป็นข้อมูล*/
+    font-size: 21px;
+  }
+  .contact-info-box h3 {
+    /* Heading*/
+    font-size: 21px;
+  }
+  .aboutme-paragraph p {
+    font-size: 21px;
+  }
+  .about-me {
+    padding: 35px;
   }
 }
 
@@ -242,6 +259,32 @@ body {
   .image-section:nth-child(4) {
     /* "Software Engineer" */
     font-size: 34px; /* ขนาดเล็กที่สุด */
+  }
+  /* ซ่อน .right-side เมื่อหน้าจอเล็กกว่า 800px */
+  .right-side {
+    display: none;
+  }
+  /* ปรับขนาดให้ left-side ขยายเต็มที่ */
+  .grid-container-aboutme {
+    grid-template-columns: 1fr; /* ให้คอลัมน์เดียวสำหรับหน้าจอเล็ก */
+    padding: 0px 20px; /* ลดขนาด padding */
+  }
+  .left-side {
+    width: 100%; /* กินพื้นที่เต็มคอลัมน์ */
+  }
+  .aboutme-paragraph p {
+    font-size: 19px; /* ลดขนาดตัวอักษร */
+  }
+  .contact-info-box p {
+    /* ขนาดตัวอักษรใน info box ที่เป็นข้อมูล*/
+    font-size: 19px;
+  }
+  .contact-info-box h3 {
+    /* Heading*/
+    font-size: 19px;
+  }
+  .about-me {
+    padding: 20px;
   }
 }
 
