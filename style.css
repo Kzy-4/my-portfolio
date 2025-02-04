@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.grid-container-education-big {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* ระยะห่างระหว่างไอเท็มในกริด */
+  padding: 0px 100px 0px 100px;
+}
+.Education {
+  border-bottom: 2px solid #615959; /* กำหนดขอบด้านล่าง */
+  padding: 50px;
+  border-bottom: 1px solid #e5ebf2;
+  width: 100%;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); เพิ่มเงา */
+}
+.Education h1 {
+  text-align: center;
+}
+.grid-container-education {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-bottom: 20px; /* Add space between each education section */
+}
+.image-icon-education {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.image-icon-education img {
+  width: 40px; /* Adjust the size of the book icon */
+  height: 40px; /* Adjust the size of the book icon */
+}
+
+.educ-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.high-school {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.graduated {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.school {
+  font-size: 14px;
+}
+
+.latest-box {
+  display: inline-block;
+  background-color: #add8e6; /* สีฟ้า */
+  border-radius: 5px; /* มุมมน */
+  font-weight: bold; /* ทำให้ตัวอักษรหนา */
+  color: #000080; /* สีตัวอักษร */
+  margin-left: 15px;
+  padding: 5px 5px; /* เพิ่ม padding */
+}
