@@ -6,7 +6,7 @@
 }
 
 /* Container for education sections with flex layout */
-.grid-container-education-big {
+.grid-container-big {
   display: flex; /* Use flexbox layout */
   justify-content: center; /* Center content horizontally */
   flex-direction: column; /* Arrange children elements in a column */
@@ -16,7 +16,7 @@
 }
 
 /* Style for the main Education section */
-.Education {
+.Header {
   border-bottom: 2px solid #615959; /* Add a border at the bottom */
   padding: 50px; /* Add padding around the content */
   border-bottom: 1px solid #e5ebf2; /* Add a secondary lighter border at the bottom */
@@ -25,12 +25,12 @@
 }
 
 /* Style for the title of the Education section */
-.Education h1 {
+.Header h1 {
   text-align: center; /* Center the heading text */
 }
 
 /* Grid container for education details with flex layout */
-.grid-container-education {
+.grid-container-small {
   padding: 10px; /* Add padding around the grid container */
   display: flex; /* Use flexbox layout */
   justify-content: flex-start; /* Align items to the left */
@@ -53,26 +53,30 @@
 }
 
 /* Container for the educational information */
-.educ-info {
+.info-container {
   display: flex; /* Use flexbox layout */
   flex-direction: column; /* Arrange items in a column */
   justify-content: center; /* Center content vertically */
 }
 
 /* Style for the high school and degree information */
-.high-school {
+.firstInfo {
   font-weight: bold; /* Make the text bold */
   font-size: 16px; /* Set the font size */
+  margin-right: 15px;
+}
+.firstInfo span {
+  margin-right: 15px;
 }
 
 /* Style for the graduated text */
-.graduated {
+.secondInfo {
   margin-top: 5px; /* Add space above the graduated text */
   font-size: 14px; /* Set the font size */
 }
 
 /* Style for the school name */
-.school {
+.thirdInfo {
   font-size: 14px; /* Set the font size */
 }
 
@@ -83,6 +87,5 @@
   border-radius: 5px; /* Add rounded corners */
   font-weight: bold; /* Make the text bold */
   color: #000080; /* Set the text color to dark blue */
-  margin-left: 15px; /* Add space to the left of the tag */
   padding: 5px 5px; /* Add padding inside the tag */
 }
