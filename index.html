@@ -1,53 +1,118 @@
 <!DOCTYPE html>
+<!-- เริ่มต้นเอกสาร HTML5 -->
 <html lang="en">
+  <!-- กำหนดภาษาของเอกสารเป็นภาษาอังกฤษ -->
   <head>
     <meta charset="UTF-8" />
+    <!-- กำหนดการเข้ารหัสเป็น UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- รองรับการแสดงผลบนอุปกรณ์มือถือ -->
+    <title>Port folio</title>
+    <!-- กำหนดชื่อหน้าเว็บ -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- เชื่อมโยงกับไฟล์ CSS -->
   </head>
   <body>
-    <div class="grid-container-big">
-      <div class="Header">
-        <h1>Education</h1>
+    <!-- คอนเทนเนอร์ที่ใช้ Flexbox เป็น Navigation Bar -->
+    <div class="container-navigator">
+      <div class="nav-box supanut">SUPANUT</div>
+      <!-- ชื่อของผู้ใช้ -->
+      <div class="nav-menu">
+        <div class="nav-box">HOME</div>
+        <!-- เมนู Home -->
+        <div class="nav-box">EDUCATION</div>
+        <!-- เมนู Education -->
+        <div class="nav-box">SKILLS</div>
+        <!-- เมนู Skills -->
+        <div class="nav-box">WORK-EXPERIENCE</div>
+        <!-- เมนู Work Experience -->
+        <div class="nav-box">PROFILE</div>
+        <!-- เมนู Profile -->
+        <div class="nav-box">PROJECT</div>
+        <!-- เมนู Project -->
+        <div class="nav-box">CONTACT</div>
+        <!-- เมนู Contact -->
       </div>
-      <div class="grid-container-medium">
-        <!-- First Education Entry (Bachelor's Degree) -->
-        <div class="grid-container-small">
-          <div class="image-icon-education">
-            <img src="book.png" alt="Book Icon" />
-          </div>
-          <div class="info-container">
-            <div class="firstInfo">
-              <span
-                >Bachelor Degree: Control system and Instrumentation Engineering
-                GPA: 3.55</span
-              >
-              <span class="latest-box">Latest</span>
+      <div class="nav-menu-icon">☰</div>
+      <!-- ไอคอนเมนู -->
+    </div>
+    <div class="image-container">
+      <div class="image-box">
+        <div class="image-section"></div>
+        <!-- ส่วนว่าง -->
+        <div class="image-section">Hi , I Am</div>
+        <!-- ข้อความ "Hi , I Am" -->
+        <div class="image-section">Supanut Khumduang</div>
+        <!-- ชื่อผู้ใช้ -->
+        <div class="image-section" id="text">Software Engineer</div>
+        <!-- ข้อความ "Software Engineer" -->
+        <div class="image-section"></div>
+        <!-- ส่วนว่าง -->
+        <div class="image-section"></div>
+        <!-- ส่วนว่าง -->
+      </div>
+    </div>
+    <div class="grid-container-aboutme">
+      <!-- ส่วนข้างบน (2fr) -->
+      <div class="about-me">
+        <h1>About Me</h1>
+        <!-- หัวข้อ "About Me" -->
+      </div>
+
+      <!-- ส่วนซ้าย (2fr) -->
+      <div class="left-side">
+        <div class="aboutme-paragraph">
+          <p>
+            I graduated with a bachelor's degree in the Department of Control
+            Systems and Instrumentation Engineering from King Mongkut's
+            University of Technology Thonburi.
+          </p>
+          <!-- เนื้อหาเกี่ยวกับการศึกษาของผู้ใช้ -->
+          <p>
+            I previously worked as C&I Maintenance Engineer in a power plant for
+            about 2 years of experience.However, I am passionate about computers
+            and software programming, so I decided to go to a software career
+            path, I'm seeking a full-time job in a software career.
+          </p>
+          <!-- เนื้อหาประสบการณ์การทำงานและการเปลี่ยนสายงาน -->
+        </div>
+        <div class="contact-info">
+          <div class="contact-info-column">
+            <div class="contact-info-box">
+              <h3>Phone</h3>
+              <!-- ส่วนแสดงหมายเลขโทรศัพท์ -->
+              <p>(+66)960417424)</p>
+              <!-- หมายเลขโทรศัพท์ -->
             </div>
-            <div class="secondInfo">Graduated June 2022</div>
-            <div class="thirdInfo">
-              King Mongkut's university of technology thonburi
+          </div>
+          <div class="contact-info-column">
+            <div class="contact-info-box">
+              <h3>Email</h3>
+              <!-- ส่วนแสดงอีเมล -->
+              <p>supanutkhumd@hotmail.com</p>
+              <!-- อีเมล -->
+            </div>
+          </div>
+          <div class="contact-info-column">
+            <div class="contact-info-box">
+              <h3>Website</h3>
+              <!-- ส่วนแสดงเว็บไซต์ -->
+              <p>www.Kzy.com</p>
+              <!-- เว็บไซต์ -->
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Second Education Entry (High School) -->
-        <div class="grid-container-small">
-          <div class="image-icon-education">
-            <img src="book.png" alt="Book Icon" />
-          </div>
-          <div class="info-container">
-            <div class="firstInfo">
-              <span>High School: Intensive English Program GPA: 3.50</span>
-            </div>
-            <div class="secondInfo">Graduated June 2022</div>
-            <div class="thirdInfo">
-              Triumudomsuksanomklau Samutprakan School
-            </div>
-          </div>
+      <!-- ส่วนขวา (1fr) -->
+      <div class="right-side">
+        <div class="picture-profile">
+          <img src="2.jpg" alt="Profile Image" />
+          <!-- รูปโปรไฟล์ -->
         </div>
       </div>
     </div>
+    <script src="script.js"></script>
+    <!-- เชื่อมโยงกับไฟล์ JavaScript -->
   </body>
 </html>
