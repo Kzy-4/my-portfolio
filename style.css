@@ -1,12 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* กำหนดให้ทุกกล่องใช้ขนาดเท่ากัน โดยไม่คำนึงถึง margin หรือ padding */
 }
 
 /* กำหนด Font ของตัวอักษร */
 body {
-  font-family: "Fira Code", "JetBrains Mono", "IBM Plex Mono", monospace;
+  font-family: "Fira Code", "JetBrains Mono", "IBM Plex Mono", monospace; /* ใช้ฟอนต์ monospaced */
   transition: font-size 0.5s ease; /* ทำให้การเปลี่ยนขนาดตัวอักษรมีความสมูท */
 }
 
@@ -16,13 +16,13 @@ body {
   height: 60px; /* กำหนดความสูงของ Navigation Bar */
   background-color: white; /* เปลี่ยนพื้นหลังเป็นสีขาว */
   display: flex; /* ใช้ Flexbox */
-  position: fixed; /* ทำให้ติดอยู่ด้านบนของหน้าจอ */
+  position: fixed; /* ทำให้คอนเทนเนอร์ติดอยู่ด้านบนของหน้าจอ */
   top: 0; /* กำหนดให้คอนเทนเนอร์อยู่ด้านบน */
   left: 0; /* กำหนดให้เริ่มจากด้านซ้ายสุดของหน้าจอ */
   z-index: 1000; /* ทำให้ Navigation Bar อยู่เหนือองค์ประกอบอื่น */
   justify-content: space-evenly; /* จัดให้กล่องแต่ละอันมีระยะห่างเท่าๆ กัน */
   align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
-  border-bottom: 1px solid rgb(1, 1, 31);
+  border-bottom: 1px solid rgb(1, 1, 31); /* กำหนดขอบด้านล่าง */
 }
 
 /* กำหนดสไตล์ของกล่องทั่วไป */
@@ -36,7 +36,7 @@ body {
   font-size: 30px; /* ทำให้ตัวอักษรใหญ่ขึ้น */
   color: rgb(29, 43, 240); /* เปลี่ยนสีตัวอักษรเป็นสีม่วง */
   font-weight: bold; /* ทำให้ตัวอักษรหนา */
-  padding-left: 40px;
+  padding-left: 40px; /* เพิ่มระยะห่างทางซ้าย */
 }
 
 .nav-menu {
@@ -48,30 +48,30 @@ body {
 
 /* รูปภาพ ******************************************************************** */
 .image-container {
-  height: 1100px;
-  width: 100vw;
-  background-image: url("5.png");
-  background-size: cover;
-  background-position: 0% 15%;
-  display: grid;
-  grid-template-columns: minmax(800px, 1400px) 1fr; /* คอลัมน์แรกต้องมีขนาดขั้นต่ำ 800px */
+  height: 1100px; /* กำหนดความสูงของ container */
+  width: 100vw; /* ความกว้างของ container ให้ครอบคลุมทั้งหมด */
+  background-image: url("5.png"); /* ใส่ภาพพื้นหลัง */
+  background-size: cover; /* ปรับขนาดภาพให้ครอบคลุมพื้นที่ */
+  background-position: 0% 15%; /* กำหนดตำแหน่งภาพ */
+  display: grid; /* ใช้ Grid Layout */
+  grid-template-columns: minmax(800px, 1400px) 1fr; /*กำหนดคอลัมน์ให้คอลัมน์แรกมีขนาดขั้นต่ำ 800px */
   align-items: center; /* จัดตำแหน่งให้อยู่กลางแนวตั้ง */
 }
 
 .image-box {
-  display: grid;
+  display: grid; /* ใช้ Grid Layout */
   grid-template-rows: repeat(6, 1fr); /* แบ่งกล่องเป็น 6 ส่วน */
   width: 100%; /* ให้กล่องขยายเต็มคอลัมน์ */
   height: 100%; /* ให้กล่องขยายเต็ม container */
   place-items: center; /* จัดให้อยู่กลางทั้งแนวนอนและแนวตั้ง */
-  color: white;
+  color: white; /* เปลี่ยนสีตัวอักษรเป็นสีขาว */
 }
 
 .image-section {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  transition: font-size 0.5s ease; /* เพิ่ม transition สำหรับข้อความ */
+  display: flex; /* ใช้ Flexbox */
+  align-items: center; /* จัดให้อยู่ตรงกลางในแนวตั้ง */
+  text-align: center; /* จัดให้อยู่ตรงกลางในแนวนอน */
+  transition: font-size 0.5s ease; /* เพิ่ม transition สำหรับการเปลี่ยนขนาดตัวอักษร */
 }
 
 /******************* ปรับขนาดตัวอักษรบนภาพ ****************************************/
@@ -84,7 +84,7 @@ body {
 .image-section:nth-child(3) {
   /* "Supanut Khumduang" */
   font-size: 100px; /* ขนาดใหญ่ที่สุด */
-  font-weight: bold;
+  font-weight: bold; /* ตัวอักษรหนา */
   color: rgba(29, 43, 240, 0.9); /* สีฟ้าอ่อน */
 }
 
@@ -93,91 +93,85 @@ body {
   font-size: 60px; /* ขนาดเริ่มต้น */
   font-weight: normal;
 }
+/******************************************************About Me*************************************************************************************************/
 /* กริดคอนเทนเนอร์ที่มีสองคอลัมน์และสองแถว */
 .grid-container-aboutme {
-  display: grid;
+  display: grid; /* ใช้ Grid Layout */
   grid-template-rows: auto 1fr; /* แถวที่ 1 = เกี่ยวกับฉัน, แถวที่ 2 = ส่วนล่าง */
   grid-template-columns: 7fr 5fr; /* คอลัมน์ที่ 1 (7fr) และ คอลัมน์ที่ 2 (5fr) */
   gap: 10px; /* ระยะห่างระหว่างไอเท็มในกริด */
-  padding: 0px 100px 0px 100px;
+  padding: 0px 100px 0px 100px; /* เพิ่ม padding ข้าง */
 }
 
 /* การจัดรูปแบบสำหรับส่วน "เกี่ยวกับฉัน" */
 .about-me {
   grid-column: span 2; /* ขยายครอบคลุมทั้งสองคอลัมน์ */
-  border-bottom: 2px solid #615959; /* กำหนดขอบด้านล่าง */
-  padding: 50px;
-  border-bottom: 1px solid #e5ebf2;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); เพิ่มเงา */
+  padding: 50px; /* เพิ่ม padding รอบๆ */
+  border-bottom: 1px solid #e5ebf2; /* กำหนดขอบล่างอีกครั้ง */
 }
+
 .about-me h1 {
-  text-align: center;
+  text-align: center; /* จัดหัวข้อให้อยู่ตรงกลาง */
 }
 
 /* การจัดรูปแบบสำหรับส่วนซ้าย */
 .left-side {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* จัดเนื้อหาชิดซ้าย */
+  background-color: white; /* กำหนดพื้นหลังเป็นสีขาว */
+  padding: 20px; /* เพิ่ม padding รอบๆ */
+  display: flex; /* ใช้ Flexbox */
+  flex-direction: column; /* ให้จัดเรียงในแนวตั้ง */
+  align-items: flex-start; /* จัดให้เนื้อหาชิดซ้าย */
   width: 100%; /* ให้ขยายเต็มพื้นที่ */
 }
+
 .aboutme-paragraph,
 .contact-info {
   align-self: flex-start; /* จัดเนื้อหาให้ชิดด้านบน */
 }
+
 .aboutme-paragraph {
-  /* background-color: red; */
-  padding: 0px 10px 20px 10px;
-  border-bottom: 1px solid #e5ebf2;
+  padding: 0px 10px 20px 10px; /* เพิ่ม padding รอบๆ */
+  border-bottom: 1px solid #e5ebf2; /* กำหนดขอบล่าง */
 }
+
 .aboutme-paragraph p {
   margin-bottom: 2px; /* เพิ่มระยะห่างระหว่างแต่ละ paragraph */
-  text-indent: 40px; /* ย่อหน้าที่ด้านซ้าย 20px */
-  font-size: 30px;
+  text-indent: 40px; /* ย่อหน้าที่ด้านซ้าย */
+  font-size: 30px; /* ขนาดตัวอักษร */
   color: #333333; /* สีของข้อความ */
 }
 
+/* การจัดรูปแบบสำหรับข้อมูลการติดต่อ */
 .contact-info {
-  display: flex;
+  display: flex; /* ใช้ Flexbox */
   justify-content: space-between; /* จัดระยะห่างระหว่างแต่ละ col */
   gap: 20px; /* ระยะห่างระหว่าง col */
   width: 100%;
-  padding-top: 20px;
+  padding-top: 20px; /* เพิ่มระยะห่างด้านบน */
+  padding-left: 8px; /* 0 คือ padding ด้านบนและล่าง, 20px คือ padding ซ้ายและขวา */
+  padding-right: 8px; /* 0 คือ padding ด้านบนและล่าง, 20px คือ padding ซ้ายและขวา */
 }
 
-/* การจัดรูปแบบสำหรับแต่ละ col */
-.contact-info-column {
-  flex: 1; /* ให้ col ทุกอันมีขนาดเท่ากัน */
-  max-width: 33.33%; /* จำกัดขนาดไม่ให้เกิน 1/3 ของ container */
-}
-
-/* การจัดรูปแบบสำหรับ contact-info-box */
 .contact-info-box {
   text-align: center; /* จัดข้อความให้อยู่กลาง */
 }
-
-/* การจัดรูปแบบสำหรับ h3 */
 .contact-info-box h3 {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 28px; /* ขนาดตัวอักษรของหัวข้อ */
+  font-weight: bold; /* ทำให้ตัวอักษรหนา */
   margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างหัวข้อกับเนื้อหา */
 }
 
-/* การจัดรูปแบบสำหรับ p */
 .contact-info-box p {
-  font-size: 24px;
+  font-size: 24px; /* ขนาดตัวอักษรของเนื้อหา */
   color: #555; /* สีของข้อความ */
 }
 
 /* การจัดรูปแบบสำหรับส่วนขวา */
 .right-side {
-  border-radius: 8px;
-  background-color: #faf9ff;
-  display: flex;
-  flex-direction: column;
+  border-radius: 8px; /* ทำให้มุมของกล่องมีความโค้ง */
+  background-color: #faf9ff; /* กำหนดพื้นหลัง */
+  display: flex; /* ใช้ Flexbox */
+  flex-direction: column; /* ให้จัดเรียงในแนวตั้ง */
 }
 
 /* การจัดรูปแบบสำหรับรูปภาพในส่วนขวา */
@@ -191,42 +185,44 @@ body {
 .picture-profile img {
   width: 100%; /* ทำให้รูปใช้ความกว้างเต็มพื้นที่ */
   height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
-  object-fit: contain; /* ปรับให้รูปภาพไม่บิดเบี้ยวและอยู่ภายในกรอบ */
+  object-fit: contain; /* ปรับให้รูปภาพไม่บิดเบี้ยว */
   border-radius: 8px; /* มุมโค้ง */
 }
-/*******************************************ขนาดหน้าจอ****************************************/
+
+/******************************************* ขนาดหน้าจอ ****************************************/
+
 @media screen and (max-width: 1300px) {
   .image-container {
     grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ */
   }
   .image-section:nth-child(2) {
-    /* "Hi , I AM" */
-    font-size: 55px; /* ปรับขนาดลงให้เหมาะกับจอเล็ก */
+    font-size: 55px; /* ปรับขนาดข้อความให้เล็กลง */
   }
 
   .image-section:nth-child(3) {
-    /* "Supanut Khumduang" */
     font-size: 80px; /* ขนาดใหญ่สุด */
   }
 
   .image-section:nth-child(4) {
-    /* "Software Engineer" */
     font-size: 45px; /* ขนาดเล็ก */
   }
+
   .grid-container-aboutme {
-    padding: 0px 50px; /* ลดการ padding ข้าง */
+    padding: 0px 50px; /* ลดขนาด padding ข้าง */
   }
+
   .contact-info-box p {
-    /* ขนาดตัวอักษรใน info box ที่เป็นข้อมูล*/
     font-size: 21px;
   }
+
   .contact-info-box h3 {
-    /* Heading*/
     font-size: 21px;
   }
+
   .aboutme-paragraph p {
     font-size: 21px;
   }
+
   .about-me {
     padding: 35px;
   }
@@ -236,53 +232,55 @@ body {
   .nav-menu {
     display: none; /* ซ่อนเมนูหลัก */
   }
+
   .nav-menu-icon {
     display: block; /* แสดงไอคอนเมนู */
-    font-size: 24px; /* ขนาดไอคอน */
-    color: gray; /* สีของไอคอนเมนู */
-    padding: 10px; /* เพิ่มขนาดพื้นที่รอบไอคอน */
+    font-size: 24px;
+    color: gray;
+    padding: 10px;
   }
+
   .image-container {
-    grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ */
+    grid-template-columns: 1fr;
   }
 
   .image-section:nth-child(2) {
-    /* "Hi , I AM" */
-    font-size: 40px; /* ปรับขนาดลงให้เล็กที่สุด */
+    font-size: 40px; /* ปรับขนาดข้อความให้เล็กที่สุด */
   }
 
   .image-section:nth-child(3) {
-    /* "Supanut Khumduang" */
     font-size: 60px; /* ขนาดใหญ่สุด */
   }
 
   .image-section:nth-child(4) {
-    /* "Software Engineer" */
     font-size: 34px; /* ขนาดเล็กที่สุด */
   }
-  /* ซ่อน .right-side เมื่อหน้าจอเล็กกว่า 800px */
+
   .right-side {
-    display: none;
+    display: none; /* ซ่อนส่วนขวา */
   }
-  /* ปรับขนาดให้ left-side ขยายเต็มที่ */
+
   .grid-container-aboutme {
     grid-template-columns: 1fr; /* ให้คอลัมน์เดียวสำหรับหน้าจอเล็ก */
-    padding: 0px 20px; /* ลดขนาด padding */
+    padding: 0px 20px;
   }
+
   .left-side {
     width: 100%; /* กินพื้นที่เต็มคอลัมน์ */
   }
+
   .aboutme-paragraph p {
-    font-size: 19px; /* ลดขนาดตัวอักษร */
+    font-size: 19px;
   }
+
   .contact-info-box p {
-    /* ขนาดตัวอักษรใน info box ที่เป็นข้อมูล*/
     font-size: 19px;
   }
+
   .contact-info-box h3 {
-    /* Heading*/
     font-size: 19px;
   }
+
   .about-me {
     padding: 20px;
   }
