@@ -46,7 +46,7 @@ body {
   align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
 }
 
-/* รูปภาพ ******************************************************************** */
+/**************************************************** รูปภาพ ใหญ่******************************************************************** */
 .image-container {
   height: 1100px; /* กำหนดความสูงของ container */
   width: 100vw; /* ความกว้างของ container ให้ครอบคลุมทั้งหมด */
@@ -262,11 +262,6 @@ body {
   font-size: 14px; /* Set the font size */
 }
 
-/* Style for the school name */
-.thirdInfo {
-  font-size: 14px; /* Set the font size */
-}
-
 /* Style for the "Latest" tag with a blue box */
 .latest-box {
   display: inline-block; /* Display the tag as an inline block element */
@@ -280,43 +275,34 @@ body {
 /******************************************* ขนาดหน้าจอ ****************************************/
 
 @media screen and (max-width: 1300px) {
+  /******* รูปภาพบนหน้าจอ *****/
   .image-container {
     grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ */
   }
   .image-section:nth-child(2) {
     font-size: 55px; /* ปรับขนาดข้อความให้เล็กลง */
   }
-
   .image-section:nth-child(3) {
     font-size: 80px; /* ขนาดใหญ่สุด */
   }
-
   .image-section:nth-child(4) {
     font-size: 45px; /* ขนาดเล็ก */
   }
-
+  /******* About Me *****/
   .grid-container-aboutme {
     padding: 5px 50px; /* ลดขนาด padding ข้าง */
   }
-
-  .grid-container-big {
-    padding: 5px 50px; /* ลดขนาด padding ข้าง */
+  .about-me {
+    padding: 35px;
   }
-
+  .aboutme-paragraph p,
+  .contact-info-box h3,
   .contact-info-box p {
     font-size: 21px;
   }
-
-  .contact-info-box h3 {
-    font-size: 21px;
-  }
-
-  .aboutme-paragraph p {
-    font-size: 21px;
-  }
-
-  .about-me {
-    padding: 35px;
+  /******* Education *****/
+  .grid-container-big {
+    padding: 5px 50px; /* ลดขนาด padding ข้าง */
   }
   .Header {
     padding: 35px;
@@ -324,6 +310,7 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+  /******* Navigaton bar *****/
   .nav-menu {
     display: none; /* ซ่อนเมนูหลัก */
   }
@@ -334,7 +321,7 @@ body {
     color: gray;
     padding: 10px;
   }
-
+  /******* รูปภาพบนหน้าจอ *****/
   .image-container {
     grid-template-columns: 1fr;
   }
@@ -350,37 +337,28 @@ body {
   .image-section:nth-child(4) {
     font-size: 34px; /* ขนาดเล็กที่สุด */
   }
-
-  .right-side {
-    display: none; /* ซ่อนส่วนขวา */
-  }
-
+  /******* About Me *****/
   .grid-container-aboutme {
     grid-template-columns: 1fr; /* ให้คอลัมน์เดียวสำหรับหน้าจอเล็ก */
     padding: 5px 20px;
   }
-  .grid-container-big {
-    padding: 5px 20px;
+  .about-me {
+    padding: 20px;
   }
-
+  .right-side {
+    display: none; /* ซ่อนส่วนขวา */
+  }
   .left-side {
     width: 100%; /* กินพื้นที่เต็มคอลัมน์ */
   }
-
-  .aboutme-paragraph p {
-    font-size: 19px;
-  }
-
+  .aboutme-paragraph p,
+  .contact-info-box h3,
   .contact-info-box p {
     font-size: 19px;
   }
-
-  .contact-info-box h3 {
-    font-size: 19px;
-  }
-
-  .about-me {
-    padding: 20px;
+  /******* Education *****/
+  .grid-container-big {
+    padding: 5px 20px;
   }
   .Header {
     padding: 20px;
