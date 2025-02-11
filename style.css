@@ -1,9 +1,16 @@
-/* Resetting default margin, padding, and box-sizing for all elements */
 * {
-  margin: 0; /* Remove margin */
-  padding: 0; /* Remove padding */
-  box-sizing: border-box; /* Ensure padding and border are included in the element's total width/height */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* กำหนดให้ทุกกล่องใช้ขนาดเท่ากัน โดยไม่คำนึงถึง margin หรือ padding */
 }
+
+/* กำหนด Font ของตัวอักษร */
+body {
+  font-family: "Fira Code", "JetBrains Mono", "IBM Plex Mono", monospace; /* ใช้ฟอนต์ monospaced */
+  transition: font-size 0.5s ease; /* ทำให้การเปลี่ยนขนาดตัวอักษรมีความสมูท */
+}
+
+/******************************************** Education *****************************************/
 
 /* Container for education sections with flex layout */
 .grid-container-big {
@@ -12,7 +19,8 @@
   flex-direction: column; /* Arrange children elements in a column */
   align-items: center; /* Align children elements in the center */
   gap: 10px; /* Add space between each item */
-  padding: 0px 100px 0px 100px; /* Add padding to the left and right */
+  padding: 10px 100px; /* Add padding to the left and right */
+  border-bottom: 1px solid #e5ebf2; /* กำหนดขอบล่างอีกครั้ง */
 }
 
 /* Style for the main Education section */
@@ -75,11 +83,6 @@
   font-size: 14px; /* Set the font size */
 }
 
-/* Style for the school name */
-.thirdInfo {
-  font-size: 14px; /* Set the font size */
-}
-
 /* Style for the "Latest" tag with a blue box */
 .latest-box {
   display: inline-block; /* Display the tag as an inline block element */
@@ -88,4 +91,24 @@
   font-weight: bold; /* Make the text bold */
   color: #000080; /* Set the text color to dark blue */
   padding: 5px 5px; /* Add padding inside the tag */
+}
+
+/******************************************* ขนาดหน้าจอ ****************************************/
+
+@media screen and (max-width: 1300px) {
+  .grid-container-big {
+    padding: 5px 50px; /* ลดขนาด padding ข้าง */
+  }
+  .Header {
+    padding: 35px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .grid-container-big {
+    padding: 5px 20px;
+  }
+  .Header {
+    padding: 20px;
+  }
 }
