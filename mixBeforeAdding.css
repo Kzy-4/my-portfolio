@@ -1,0 +1,372 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* กำหนดให้ทุกกล่องใช้ขนาดเท่ากัน โดยไม่คำนึงถึง margin หรือ padding */
+}
+
+/* กำหนด Font ของตัวอักษร */
+body {
+  font-family: "Fira Code", "JetBrains Mono", "IBM Plex Mono", monospace; /* ใช้ฟอนต์ monospaced */
+  transition: font-size 0.5s ease; /* ทำให้การเปลี่ยนขนาดตัวอักษรมีความสมูท */
+}
+
+/* กำหนดสไตล์ของคอนเทนเนอร์ให้เป็น Navigation Bar */
+.container-navigator {
+  width: 100%; /* ทำให้คอนเทนเนอร์ยาวเต็มหน้าจอ */
+  height: 60px; /* กำหนดความสูงของ Navigation Bar */
+  background-color: white; /* เปลี่ยนพื้นหลังเป็นสีขาว */
+  display: flex; /* ใช้ Flexbox */
+  position: fixed; /* ทำให้คอนเทนเนอร์ติดอยู่ด้านบนของหน้าจอ */
+  top: 0; /* กำหนดให้คอนเทนเนอร์อยู่ด้านบน */
+  left: 0; /* กำหนดให้เริ่มจากด้านซ้ายสุดของหน้าจอ */
+  z-index: 1000; /* ทำให้ Navigation Bar อยู่เหนือองค์ประกอบอื่น */
+  justify-content: space-evenly; /* จัดให้กล่องแต่ละอันมีระยะห่างเท่าๆ กัน */
+  align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+  border-bottom: 1px solid rgb(1, 1, 31); /* กำหนดขอบด้านล่าง */
+}
+
+/* กำหนดสไตล์ของกล่องทั่วไป */
+.nav-box {
+  font-size: 16px;
+  font-weight: bold;
+  color: gray; /* เปลี่ยนสีตัวอักษรเป็นสีเทา */
+}
+
+.nav-box.supanut {
+  font-size: 30px; /* ทำให้ตัวอักษรใหญ่ขึ้น */
+  color: rgb(29, 43, 240); /* เปลี่ยนสีตัวอักษรเป็นสีม่วง */
+  font-weight: bold; /* ทำให้ตัวอักษรหนา */
+  padding-left: 40px; /* เพิ่มระยะห่างทางซ้าย */
+}
+
+.nav-menu {
+  width: 100%;
+  display: flex; /* ใช้ Flexbox */
+  justify-content: space-evenly; /* จัดให้กล่องแต่ละอันมีระยะห่างเท่าๆ กัน */
+  align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+}
+
+/**************************************************** รูปภาพ ใหญ่******************************************************************** */
+.image-container {
+  height: 1100px; /* กำหนดความสูงของ container */
+  width: 100vw; /* ความกว้างของ container ให้ครอบคลุมทั้งหมด */
+  background-image: url("5.png"); /* ใส่ภาพพื้นหลัง */
+  background-size: cover; /* ปรับขนาดภาพให้ครอบคลุมพื้นที่ */
+  background-position: 0% 15%; /* กำหนดตำแหน่งภาพ */
+  display: grid; /* ใช้ Grid Layout */
+  grid-template-columns: minmax(800px, 1400px) 1fr; /*กำหนดคอลัมน์ให้คอลัมน์แรกมีขนาดขั้นต่ำ 800px */
+  align-items: center; /* จัดตำแหน่งให้อยู่กลางแนวตั้ง */
+}
+
+.image-box {
+  display: grid; /* ใช้ Grid Layout */
+  grid-template-rows: repeat(6, 1fr); /* แบ่งกล่องเป็น 6 ส่วน */
+  width: 100%; /* ให้กล่องขยายเต็มคอลัมน์ */
+  height: 100%; /* ให้กล่องขยายเต็ม container */
+  place-items: center; /* จัดให้อยู่กลางทั้งแนวนอนและแนวตั้ง */
+  color: white; /* เปลี่ยนสีตัวอักษรเป็นสีขาว */
+}
+
+.image-section {
+  display: flex; /* ใช้ Flexbox */
+  align-items: center; /* จัดให้อยู่ตรงกลางในแนวตั้ง */
+  text-align: center; /* จัดให้อยู่ตรงกลางในแนวนอน */
+  transition: font-size 0.5s ease; /* เพิ่ม transition สำหรับการเปลี่ยนขนาดตัวอักษร */
+}
+
+/******************* ปรับขนาดตัวอักษรบนภาพ ****************************************/
+.image-section:nth-child(2) {
+  /* "Hi , I AM" */
+  font-size: 70px; /* ขนาดเริ่มต้น */
+  font-weight: normal;
+}
+
+.image-section:nth-child(3) {
+  /* "Supanut Khumduang" */
+  font-size: 100px; /* ขนาดใหญ่ที่สุด */
+  font-weight: bold; /* ตัวอักษรหนา */
+  color: rgba(29, 43, 240, 0.9); /* สีฟ้าอ่อน */
+}
+
+.image-section:nth-child(4) {
+  /* "Software Engineer" */
+  font-size: 60px; /* ขนาดเริ่มต้น */
+  font-weight: normal;
+}
+/******************************************************About Me*************************************************************************************************/
+/* กริดคอนเทนเนอร์ที่มีสองคอลัมน์และสองแถว */
+.grid-container-aboutme {
+  display: grid; /* ใช้ Grid Layout */
+  grid-template-rows: auto 1fr; /* แถวที่ 1 = เกี่ยวกับฉัน, แถวที่ 2 = ส่วนล่าง */
+  grid-template-columns: 7fr 5fr; /* คอลัมน์ที่ 1 (7fr) และ คอลัมน์ที่ 2 (5fr) */
+  gap: 10px; /* ระยะห่างระหว่างไอเท็มในกริด */
+  padding: 10px 100px; /* เพิ่ม padding ข้าง */
+  border-bottom: 1px solid #e5ebf2; /* กำหนดขอบล่างอีกครั้ง */
+}
+
+/* การจัดรูปแบบสำหรับส่วน "เกี่ยวกับฉัน" */
+.about-me {
+  grid-column: span 2; /* ขยายครอบคลุมทั้งสองคอลัมน์ */
+  padding: 50px; /* เพิ่ม padding รอบๆ */
+  border-bottom: 1px solid #e5ebf2; /* กำหนดขอบล่างอีกครั้ง */
+}
+
+.about-me h1 {
+  text-align: center; /* จัดหัวข้อให้อยู่ตรงกลาง */
+}
+
+/* การจัดรูปแบบสำหรับส่วนซ้าย */
+.left-side {
+  background-color: white; /* กำหนดพื้นหลังเป็นสีขาว */
+  padding: 20px; /* เพิ่ม padding รอบๆ */
+  display: flex; /* ใช้ Flexbox */
+  flex-direction: column; /* ให้จัดเรียงในแนวตั้ง */
+  align-items: flex-start; /* จัดให้เนื้อหาชิดซ้าย */
+  width: 100%; /* ให้ขยายเต็มพื้นที่ */
+}
+
+.aboutme-paragraph,
+.contact-info {
+  align-self: flex-start; /* จัดเนื้อหาให้ชิดด้านบน */
+}
+
+.aboutme-paragraph {
+  padding: 0px 10px 20px 10px; /* เพิ่ม padding รอบๆ */
+  border-bottom: 1px solid #e5ebf2; /* กำหนดขอบล่าง */
+}
+
+.aboutme-paragraph p {
+  margin-bottom: 2px; /* เพิ่มระยะห่างระหว่างแต่ละ paragraph */
+  text-indent: 40px; /* ย่อหน้าที่ด้านซ้าย */
+  font-size: 30px; /* ขนาดตัวอักษร */
+  color: #333333; /* สีของข้อความ */
+}
+
+/* การจัดรูปแบบสำหรับข้อมูลการติดต่อ */
+.contact-info {
+  display: flex; /* ใช้ Flexbox */
+  justify-content: space-between; /* จัดระยะห่างระหว่างแต่ละ col */
+  gap: 20px; /* ระยะห่างระหว่าง col */
+  width: 100%;
+  padding-top: 20px; /* เพิ่มระยะห่างด้านบน */
+  padding-left: 8px; /* 0 คือ padding ด้านบนและล่าง, 20px คือ padding ซ้ายและขวา */
+  padding-right: 8px; /* 0 คือ padding ด้านบนและล่าง, 20px คือ padding ซ้ายและขวา */
+}
+
+.contact-info-box {
+  text-align: center; /* จัดข้อความให้อยู่กลาง */
+}
+.contact-info-box h3 {
+  font-size: 28px; /* ขนาดตัวอักษรของหัวข้อ */
+  font-weight: bold; /* ทำให้ตัวอักษรหนา */
+  margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างหัวข้อกับเนื้อหา */
+}
+
+.contact-info-box p {
+  font-size: 24px; /* ขนาดตัวอักษรของเนื้อหา */
+  color: #555; /* สีของข้อความ */
+}
+
+/* การจัดรูปแบบสำหรับส่วนขวา */
+.right-side {
+  border-radius: 8px; /* ทำให้มุมของกล่องมีความโค้ง */
+  background-color: #faf9ff; /* กำหนดพื้นหลัง */
+  display: flex; /* ใช้ Flexbox */
+  flex-direction: column; /* ให้จัดเรียงในแนวตั้ง */
+}
+
+/* การจัดรูปแบบสำหรับรูปภาพในส่วนขวา */
+.picture-profile {
+  width: auto; /* ให้รูปใช้ความกว้างเต็มพื้นที่ */
+  max-width: 888px; /* จำกัดขนาดความกว้างของรูป */
+  height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
+  margin: 0 auto; /* จัดให้อยู่กลาง */
+}
+
+.picture-profile img {
+  width: 100%; /* ทำให้รูปใช้ความกว้างเต็มพื้นที่ */
+  height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
+  object-fit: contain; /* ปรับให้รูปภาพไม่บิดเบี้ยว */
+  border-radius: 8px; /* มุมโค้ง */
+}
+/******************************************** Education *****************************************/
+
+/* Container for education sections with flex layout */
+.grid-container-big {
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center content horizontally */
+  flex-direction: column; /* Arrange children elements in a column */
+  align-items: center; /* Align children elements in the center */
+  gap: 10px; /* Add space between each item */
+  padding: 10px 100px; /* Add padding to the left and right */
+  border-bottom: 1px solid #e5ebf2; /* กำหนดขอบล่างอีกครั้ง */
+}
+
+/* Style for the main Education section */
+.Header {
+  border-bottom: 2px solid #615959; /* Add a border at the bottom */
+  padding: 50px; /* Add padding around the content */
+  border-bottom: 1px solid #e5ebf2; /* Add a secondary lighter border at the bottom */
+  width: 100%; /* Make the width of the element 100% of its parent */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); Adding shadow effect (currently commented out) */
+}
+
+/* Style for the title of the Education section */
+.Header h1 {
+  text-align: center; /* Center the heading text */
+}
+
+/* Grid container for education details with flex layout */
+.grid-container-small {
+  padding: 10px; /* Add padding around the grid container */
+  display: flex; /* Use flexbox layout */
+  justify-content: flex-start; /* Align items to the left */
+  gap: 20px; /* Add space between grid items */
+  margin-bottom: 20px; /* Add space at the bottom of each education section */
+}
+
+/* Style for the book icon section */
+.image-icon-education {
+  display: flex; /* Use flexbox layout */
+  justify-content: flex-start; /* Align items to the left */
+  align-items: flex-start; /* Align items at the top */
+  align-content: flex-start; /* Align content to the top */
+}
+
+/* Style for the image (book icon) inside the education section */
+.image-icon-education img {
+  width: 40px; /* Set the width of the image (book icon) */
+  height: 40px; /* Set the height of the image (book icon) */
+}
+
+/* Container for the educational information */
+.info-container {
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center; /* Center content vertically */
+}
+
+/* Style for the high school and degree information */
+.firstInfo {
+  font-weight: bold; /* Make the text bold */
+  font-size: 16px; /* Set the font size */
+  margin-right: 15px;
+}
+.firstInfo span {
+  margin-right: 15px;
+}
+
+/* Style for the graduated text */
+.secondInfo {
+  margin-top: 5px; /* Add space above the graduated text */
+  font-size: 14px; /* Set the font size */
+}
+
+/* Style for the "Latest" tag with a blue box */
+.latest-box {
+  display: inline-block; /* Display the tag as an inline block element */
+  background-color: #add8e6; /* Set the background color to light blue */
+  border-radius: 5px; /* Add rounded corners */
+  font-weight: bold; /* Make the text bold */
+  color: #000080; /* Set the text color to dark blue */
+  padding: 5px 5px; /* Add padding inside the tag */
+}
+
+/******************************************* ขนาดหน้าจอ ****************************************/
+
+@media screen and (max-width: 1300px) {
+  /******* รูปภาพบนหน้าจอ *****/
+  .image-container {
+    grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ */
+  }
+  .image-section:nth-child(2) {
+    font-size: 55px; /* ปรับขนาดข้อความให้เล็กลง */
+  }
+  .image-section:nth-child(3) {
+    font-size: 80px; /* ขนาดใหญ่สุด */
+  }
+  .image-section:nth-child(4) {
+    font-size: 45px; /* ขนาดเล็ก */
+  }
+  /******* About Me *****/
+  .grid-container-aboutme {
+    padding: 5px 50px; /* ลดขนาด padding ข้าง */
+  }
+  .about-me {
+    padding: 35px;
+  }
+  .aboutme-paragraph p,
+  .contact-info-box h3,
+  .contact-info-box p {
+    font-size: 21px;
+  }
+  /******* Education *****/
+  .grid-container-big {
+    padding: 5px 50px; /* ลดขนาด padding ข้าง */
+  }
+  .Header {
+    padding: 35px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  /******* Navigaton bar *****/
+  .nav-menu {
+    display: none; /* ซ่อนเมนูหลัก */
+  }
+
+  .nav-menu-icon {
+    display: block; /* แสดงไอคอนเมนู */
+    font-size: 24px;
+    color: gray;
+    padding: 10px;
+  }
+  /******* รูปภาพบนหน้าจอ *****/
+  .image-container {
+    grid-template-columns: 1fr;
+  }
+
+  .image-section:nth-child(2) {
+    font-size: 40px; /* ปรับขนาดข้อความให้เล็กที่สุด */
+  }
+
+  .image-section:nth-child(3) {
+    font-size: 60px; /* ขนาดใหญ่สุด */
+  }
+
+  .image-section:nth-child(4) {
+    font-size: 34px; /* ขนาดเล็กที่สุด */
+  }
+  /******* About Me *****/
+  .grid-container-aboutme {
+    grid-template-columns: 1fr; /* ให้คอลัมน์เดียวสำหรับหน้าจอเล็ก */
+    padding: 5px 20px;
+  }
+  .about-me {
+    padding: 20px;
+  }
+  .right-side {
+    display: none; /* ซ่อนส่วนขวา */
+  }
+  .left-side {
+    width: 100%; /* กินพื้นที่เต็มคอลัมน์ */
+  }
+  .aboutme-paragraph p,
+  .contact-info-box h3,
+  .contact-info-box p {
+    font-size: 19px;
+  }
+  /******* Education *****/
+  .grid-container-big {
+    padding: 5px 20px;
+  }
+  .Header {
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .nav-menu-icon {
+    display: none; /* ซ่อนไอคอนเมนู เมื่ออยู่ในหน้าจอใหญ่ */
+  }
+}
