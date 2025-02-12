@@ -260,6 +260,7 @@ body {
 .secondInfo {
   margin-top: 5px; /* Add space above the graduated text */
   font-size: 14px; /* Set the font size */
+  line-height: 1.4;
 }
 
 /* Style for the "Latest" tag with a blue box */
@@ -270,6 +271,10 @@ body {
   font-weight: bold; /* Make the text bold */
   color: #000080; /* Set the text color to dark blue */
   padding: 5px 5px; /* Add padding inside the tag */
+}
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
 }
 
 /******************************************* ขนาดหน้าจอ ****************************************/
