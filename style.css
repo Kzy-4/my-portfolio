@@ -192,16 +192,16 @@ body {
 /******************************************** Education *****************************************/
 
 /* Container for education sections with flex layout */
+
 .grid-container-big {
-  display: flex; /* Use flexbox layout */
-  justify-content: center; /* Center content horizontally */
-  flex-direction: column; /* Arrange children elements in a column */
-  align-items: center; /* Align children elements in the center */
-  gap: 10px; /* Add space between each item */
+  display: flex;
+  justify-content: center; /* อาจจะปรับเป็น flex-start หากต้องการให้เนื้อหาทั้งหมดชิดซ้าย */
+  flex-direction: column;
+  align-items: flex-start; /* เปลี่ยนจาก center เป็น flex-start */
+  gap: 10px;
   padding: 10px 100px; /* Add padding to the left and right */
   border-bottom: 1px solid #e5ebf2; /* กำหนดขอบล่างอีกครั้ง */
 }
-
 /* Style for the main Education section */
 .Header {
   border-bottom: 2px solid #615959; /* Add a border at the bottom */
