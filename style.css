@@ -56,7 +56,7 @@ nav a {
 .image-container {
   height: 1100px; /* กำหนดความสูงของ container */
   width: 100vw; /* ความกว้างของ container ให้ครอบคลุมทั้งหมด */
-  background-image: url("5.png"); /* ใส่ภาพพื้นหลัง */
+  background-image: url("./Picture/5.png"); /* ใส่ภาพพื้นหลัง */
   background-size: cover; /* ปรับขนาดภาพให้ครอบคลุมพื้นที่ */
   background-position: 0% 15%; /* กำหนดตำแหน่งภาพ */
   display: grid; /* ใช้ Grid Layout */
