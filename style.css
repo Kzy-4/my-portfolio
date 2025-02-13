@@ -144,7 +144,7 @@ nav a {
 .aboutme-paragraph p {
   margin-bottom: 2px; /* เพิ่มระยะห่างระหว่างแต่ละ paragraph */
   text-indent: 40px; /* ย่อหน้าที่ด้านซ้าย */
-  font-size: 28px; /* ขนาดตัวอักษร */
+  font-size: 24px; /* ขนาดตัวอักษร */
   color: #333333; /* สีของข้อความ */
 }
 
@@ -163,13 +163,13 @@ nav a {
   text-align: center; /* จัดข้อความให้อยู่กลาง */
 }
 .contact-info-box h3 {
-  font-size: 24px; /* ขนาดตัวอักษรของหัวข้อ */
+  font-size: 20px; /* ขนาดตัวอักษรของหัวข้อ */
   font-weight: bold; /* ทำให้ตัวอักษรหนา */
   margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างหัวข้อกับเนื้อหา */
 }
 
 .contact-info-box p {
-  font-size: 20px; /* ขนาดตัวอักษรของเนื้อหา */
+  font-size: 19px; /* ขนาดตัวอักษรของเนื้อหา */
   color: #555; /* สีของข้อความ */
 }
 
@@ -316,7 +316,7 @@ ul {
   .aboutme-paragraph p,
   .contact-info-box h3,
   .contact-info-box p {
-    font-size: 24px;
+    font-size: 20px;
   }
   /******* Education *****/
   .grid-container-big {
