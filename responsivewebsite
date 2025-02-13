@@ -33,11 +33,3 @@
     <!-- เชื่อมโยงกับไฟล์ JavaScript -->
   </body>
 </html>
-
-<a href="#home">HOME</a>
-<a href="#about-me">ABOUT ME</a>
-<a href="#education">EDUCATION</a>
-<a href="#skills">SKILLS</a>
-<a href="#work-experience">WORK-EXPERIENCE</a>
-<a href="#project">PROJECT</a>
-<a href="#contact">CONTACT</a>
