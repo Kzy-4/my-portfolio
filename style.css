@@ -1,107 +1,143 @@
-/* รีเซ็ตการตั้งค่าพื้นฐานบางประการ */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* กำหนดให้ทุกกล่องใช้ขนาดเท่ากัน โดยไม่คำนึงถึง margin หรือ padding */
 }
 
-/* การจัดรูปแบบสำหรับ body รวมถึงฟอนต์และสีพื้นหลัง */
+/* กำหนด Font ของตัวอักษร */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  font-family: "Fira Code", "JetBrains Mono", "IBM Plex Mono", monospace; /* ใช้ฟอนต์ monospaced */
+  transition: font-size 0.5s ease; /* ทำให้การเปลี่ยนขนาดตัวอักษรมีความสมูท */
 }
 
+/* กำหนดสไตล์ของคอนเทนเนอร์ให้เป็น Navigation Bar */
+nav {
+  position: fixed; /* ติดแถบนำทางที่ด้านบนของหน้า */
+  top: 0; /* ตำแหน่งอยู่ที่ด้านบนสุด */
+  left: 0; /* ตำแหน่งอยู่ที่ด้านซ้ายสุด */
+  width: 100%; /* กำหนดความกว้างของแถบเมนูให้เต็มหน้าจอ */
+  background-color: white; /* เปลี่ยนพื้นหลังเป็นสีขาว */
+  height: 60px; /* กำหนดความสูงของ Navigation Bar */
+  z-index: 1000; /* ให้แถบนำทางอยู่ด้านบนสุด */
+  display: flex; /* ใช้ Flexbox เพื่อจัดการตำแหน่งของรายการในแถบเมนู */
+  justify-content: space-evenly; /* จัดตำแหน่งรายการเมนูให้ห่างกัน */
+  align-items: center; /* จัดรายการให้อยู่กลางแนวตั้ง */
+  border-bottom: 1px solid rgb(1, 1, 31);
+}
+.nav-container {
+  display: flex;
+  justify-content: space-evenly; /* จัดตำแหน่งรายการเมนูให้ห่างกัน */
+  align-items: center; /* จัดรายการให้อยู่กลางแนวตั้ง */
+  background-color: #ffffff; /* กำหนดพื้นหลังเป็นสีเทาเข้ม */
+  width: 100%; /* กำหนดความกว้างของแถบเมนูให้เต็มหน้าจอ */
+}
+#supanut {
+  font-size: 30px; /* ทำให้ตัวอักษรใหญ่ขึ้น */
+  color: rgb(29, 43, 240); /* เปลี่ยนสีตัวอักษรเป็นสีม่วง */
+  font-weight: bold; /* ทำให้ตัวอักษรหนา */
+  padding-left: 40px; /* เพิ่มระยะห่างทางซ้าย */
+}
+/* กำหนดสไตล์ของกล่องทั่วไป */
+nav a {
+  color: gray; /* เปลี่ยนสีตัวอักษรเป็นสีเทา */
+  text-decoration: none; /* เอาเส้นใต้ในเมนูออก */
+  margin: 0 20px; /* กำหนดระยะห่างระหว่างรายการ */
+  font-size: 16px; /* กำหนดขนาดตัวอักษร */
+  font-weight: bold;
+}
+.nav-links {
+  display: flex; /* ใช้ Flexbox สำหรับเมนู */
+}
+.menu-icon {
+  display: none; /* ซ่อนไอคอน hamburger ในหน้าจอใหญ่ */
+}
+
+/******************************************************About Me*************************************************************************************************/
 /* กริดคอนเทนเนอร์ที่มีสองคอลัมน์และสองแถว */
 .grid-container-aboutme {
-  display: grid;
+  display: grid; /* ใช้ Grid Layout */
   grid-template-rows: auto 1fr; /* แถวที่ 1 = เกี่ยวกับฉัน, แถวที่ 2 = ส่วนล่าง */
   grid-template-columns: 7fr 5fr; /* คอลัมน์ที่ 1 (7fr) และ คอลัมน์ที่ 2 (5fr) */
   gap: 10px; /* ระยะห่างระหว่างไอเท็มในกริด */
-  padding: 0px 100px 0px 100px;
+  padding: 10px 100px; /* เพิ่ม padding ข้าง */
+  border-bottom: 1px solid #e5ebf2; /* กำหนดขอบล่างอีกครั้ง */
 }
 
 /* การจัดรูปแบบสำหรับส่วน "เกี่ยวกับฉัน" */
 .about-me {
   grid-column: span 2; /* ขยายครอบคลุมทั้งสองคอลัมน์ */
-  border-bottom: 2px solid #615959; /* กำหนดขอบด้านล่าง */
-  padding: 50px;
-  border-bottom: 1px solid #e5ebf2;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); เพิ่มเงา */
+  padding: 50px; /* เพิ่ม padding รอบๆ */
+  border-bottom: 1px solid #e5ebf2; /* กำหนดขอบล่างอีกครั้ง */
 }
+
 .about-me h1 {
-  text-align: center;
+  text-align: center; /* จัดหัวข้อให้อยู่ตรงกลาง */
 }
 
 /* การจัดรูปแบบสำหรับส่วนซ้าย */
 .left-side {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* จัดเนื้อหาชิดซ้าย */
+  background-color: white; /* กำหนดพื้นหลังเป็นสีขาว */
+  padding: 20px; /* เพิ่ม padding รอบๆ */
+  display: flex; /* ใช้ Flexbox */
+  flex-direction: column; /* ให้จัดเรียงในแนวตั้ง */
+  align-items: flex-start; /* จัดให้เนื้อหาชิดซ้าย */
   width: 100%; /* ให้ขยายเต็มพื้นที่ */
 }
+
 .aboutme-paragraph,
 .contact-info {
   align-self: flex-start; /* จัดเนื้อหาให้ชิดด้านบน */
 }
+
 .aboutme-paragraph {
-  /* background-color: red; */
-  padding: 0px 10px 20px 10px;
-  border-bottom: 1px solid #e5ebf2;
+  padding: 0px 10px 20px 10px; /* เพิ่ม padding รอบๆ */
+  border-bottom: 1px solid #e5ebf2; /* กำหนดขอบล่าง */
 }
+
 .aboutme-paragraph p {
   margin-bottom: 2px; /* เพิ่มระยะห่างระหว่างแต่ละ paragraph */
-  text-indent: 40px; /* ย่อหน้าที่ด้านซ้าย 20px */
-  font-size: 24px;
+  text-indent: 40px; /* ย่อหน้าที่ด้านซ้าย */
+  font-size: 24px; /* ขนาดตัวอักษร */
   color: #333333; /* สีของข้อความ */
 }
 
+/* การจัดรูปแบบสำหรับข้อมูลการติดต่อ */
 .contact-info {
-  display: flex;
+  display: flex; /* ใช้ Flexbox */
   justify-content: space-between; /* จัดระยะห่างระหว่างแต่ละ col */
   gap: 20px; /* ระยะห่างระหว่าง col */
   width: 100%;
-  padding-top: 20px;
+  padding-top: 20px; /* เพิ่มระยะห่างด้านบน */
+  padding-left: 8px; /* 0 คือ padding ด้านบนและล่าง, 20px คือ padding ซ้ายและขวา */
+  padding-right: 8px; /* 0 คือ padding ด้านบนและล่าง, 20px คือ padding ซ้ายและขวา */
 }
 
-/* การจัดรูปแบบสำหรับแต่ละ col */
-.contact-info-column {
-  flex: 1; /* ให้ col ทุกอันมีขนาดเท่ากัน */
-  max-width: 33.33%; /* จำกัดขนาดไม่ให้เกิน 1/3 ของ container */
-}
-
-/* การจัดรูปแบบสำหรับ contact-info-box */
 .contact-info-box {
   text-align: center; /* จัดข้อความให้อยู่กลาง */
 }
-
-/* การจัดรูปแบบสำหรับ h3 */
 .contact-info-box h3 {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 20px; /* ขนาดตัวอักษรของหัวข้อ */
+  font-weight: bold; /* ทำให้ตัวอักษรหนา */
   margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างหัวข้อกับเนื้อหา */
 }
 
-/* การจัดรูปแบบสำหรับ p */
 .contact-info-box p {
-  font-size: 20px;
+  font-size: 19px; /* ขนาดตัวอักษรของเนื้อหา */
   color: #555; /* สีของข้อความ */
 }
 
 /* การจัดรูปแบบสำหรับส่วนขวา */
 .right-side {
-  border-radius: 8px;
-  background-color: #faf9ff;
-  display: flex;
-  flex-direction: column;
+  border-radius: 8px; /* ทำให้มุมของกล่องมีความโค้ง */
+  background-color: #faf9ff; /* กำหนดพื้นหลัง */
+  display: flex; /* ใช้ Flexbox */
+  flex-direction: column; /* ให้จัดเรียงในแนวตั้ง */
 }
 
 /* การจัดรูปแบบสำหรับรูปภาพในส่วนขวา */
 .picture-profile {
   width: auto; /* ให้รูปใช้ความกว้างเต็มพื้นที่ */
-  max-width: 528px; /* จำกัดขนาดความกว้างของรูป */
+  max-width: 888px; /* จำกัดขนาดความกว้างของรูป */
   height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
   margin: 0 auto; /* จัดให้อยู่กลาง */
 }
@@ -109,50 +145,91 @@ body {
 .picture-profile img {
   width: 100%; /* ทำให้รูปใช้ความกว้างเต็มพื้นที่ */
   height: auto; /* ให้ความสูงปรับตามอัตราส่วน */
-  object-fit: contain; /* ปรับให้รูปภาพไม่บิดเบี้ยวและอยู่ภายในกรอบ */
+  object-fit: contain; /* ปรับให้รูปภาพไม่บิดเบี้ยว */
   border-radius: 8px; /* มุมโค้ง */
 }
 
-/*******************************************ขนาดหน้าจอ****************************************/
+/******************************************* ขนาดหน้าจอ ****************************************/
+
 @media screen and (max-width: 1300px) {
+  /***********Navigation bar******************/
+  #supanut {
+    padding-left: 0px;
+  }
+
+  /******* About Me *****/
   .grid-container-aboutme {
-    padding: 0px 50px; /* ลดการ padding ข้าง */
+    padding: 5px 50px; /* ลดขนาด padding ข้าง */
   }
+  .about-me {
+    padding: 35px;
+  }
+  .aboutme-paragraph p,
+  .contact-info-box h3,
   .contact-info-box p {
-    /* ขนาดตัวอักษรใน info box ที่เป็นข้อมูล*/
-    font-size: 15px;
-  }
-  .contact-info-box h3 {
-    /* Heading*/
-    font-size: 15px;
-  }
-  .aboutme-paragraph p {
     font-size: 20px;
   }
 }
 
 @media screen and (max-width: 800px) {
-  /* ซ่อน .right-side เมื่อหน้าจอเล็กกว่า 800px */
-  .right-side {
-    display: none;
+  /******* Navigaton bar *****/
+  nav {
+    display: block;
   }
-  /* ปรับขนาดให้ left-side ขยายเต็มที่ */
+  #supanut {
+    display: inline-block;
+  }
+  .nav-links {
+    display: none; /* ซ่อนเมนูเมื่อหน้าจอมีขนาดเล็กกว่า 800px */
+  }
+  .nav-links a {
+    margin: 15px 0; /* กำหนดระยะห่างระหว่างรายการเมนู */
+  }
+  .menu-icon {
+    display: inline-block; /* แสดงไอคอน hamburger เมื่อหน้าจอเล็กกว่า 800px */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อเอาเมาส์ไปวางที่ไอคอน */
+    font-size: 30px; /* ขนาดไอคอน */
+    color: gray; /* เปลี่ยนสีตัวอักษรเป็นสีเทา */
+    padding: 10px; /* ระยะห่างภายในไอคอน */
+  }
+  .nav-links.active {
+    display: flex; /* แสดงเมนูเมื่อคลิกไอคอน hamburger */
+    flex-direction: column; /* จัดเมนูเป็นแนวตั้ง */
+    background-color: #ffffff; /*กำหนดพื้นหลังเป็นสีเทาเข้ม */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+  }
+  .menu-icon.active {
+    display: flex;
+    background-color: #ffffff;
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    flex-direction: column; /* จัดเมนูเป็นแนวตั้ง */
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-evenly; /* จัดตำแหน่งรายการเมนูให้ห่างกัน */
+    align-items: center; /* จัดรายการให้อยู่กลางแนวตั้ง */
+  }
+  .nav-container.active {
+    flex-direction: column;
+  }
+
+  /******* About Me *****/
   .grid-container-aboutme {
     grid-template-columns: 1fr; /* ให้คอลัมน์เดียวสำหรับหน้าจอเล็ก */
-    padding: 0px 20px; /* ลดขนาด padding */
+    padding: 5px 5px;
+  }
+  .about-me {
+    padding: 20px;
+  }
+  .right-side {
+    display: none; /* ซ่อนส่วนขวา */
   }
   .left-side {
     width: 100%; /* กินพื้นที่เต็มคอลัมน์ */
   }
-  .aboutme-paragraph p {
-    font-size: 16px; /* ลดขนาดตัวอักษร */
-  }
+  .aboutme-paragraph p,
+  .contact-info-box h3,
   .contact-info-box p {
-    /* ขนาดตัวอักษรใน info box ที่เป็นข้อมูล*/
-    font-size: 11px;
-  }
-  .contact-info-box h3 {
-    /* Heading*/
-    font-size: 11px;
+    font-size: 16px;
   }
 }
