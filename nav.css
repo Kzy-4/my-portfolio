@@ -16,52 +16,90 @@ nav {
   top: 0; /* ตำแหน่งอยู่ที่ด้านบนสุด */
   left: 0; /* ตำแหน่งอยู่ที่ด้านซ้ายสุด */
   width: 100%; /* กำหนดความกว้างของแถบเมนูให้เต็มหน้าจอ */
-  background-color: #333; /* กำหนดพื้นหลังเป็นสีเทาเข้ม */
+  background-color: white; /* เปลี่ยนพื้นหลังเป็นสีขาว */
+  height: 60px; /* กำหนดความสูงของ Navigation Bar */
+  z-index: 1000; /* ให้แถบนำทางอยู่ด้านบนสุด */
   display: flex; /* ใช้ Flexbox เพื่อจัดการตำแหน่งของรายการในแถบเมนู */
   justify-content: space-evenly; /* จัดตำแหน่งรายการเมนูให้ห่างกัน */
   align-items: center; /* จัดรายการให้อยู่กลางแนวตั้ง */
-  z-index: 1000; /* ให้แถบนำทางอยู่ด้านบนสุด */
   border-bottom: 1px solid rgb(1, 1, 31);
-  height: 60px; /* กำหนดความสูงของ Navigation Bar */
 }
 .nav-container {
   display: flex;
   justify-content: space-evenly; /* จัดตำแหน่งรายการเมนูให้ห่างกัน */
   align-items: center; /* จัดรายการให้อยู่กลางแนวตั้ง */
-  background-color: #333; /* กำหนดพื้นหลังเป็นสีเทาเข้ม */
+  background-color: #ffffff; /* กำหนดพื้นหลังเป็นสีเทาเข้ม */
   width: 100%; /* กำหนดความกว้างของแถบเมนูให้เต็มหน้าจอ */
 }
-/* กำหนดสไตล์ของกล่องทั่วไป */
-nav a {
-  color: gray; /* เปลี่ยนสีตัวอักษรเป็นสีเทา */
-  text-decoration: none; /* เอาเส้นใต้ในเมนูออก */
-  margin: 0 20px; /* กำหนดระยะห่างระหว่างรายการ */
-  font-size: 18px; /* กำหนดขนาดตัวอักษร */
-  font-weight: bold;
-}
-
 #supanut {
   font-size: 30px; /* ทำให้ตัวอักษรใหญ่ขึ้น */
   color: rgb(29, 43, 240); /* เปลี่ยนสีตัวอักษรเป็นสีม่วง */
   font-weight: bold; /* ทำให้ตัวอักษรหนา */
   padding-left: 40px; /* เพิ่มระยะห่างทางซ้าย */
 }
-
+/* กำหนดสไตล์ของกล่องทั่วไป */
+nav a {
+  color: gray; /* เปลี่ยนสีตัวอักษรเป็นสีเทา */
+  text-decoration: none; /* เอาเส้นใต้ในเมนูออก */
+  margin: 0 20px; /* กำหนดระยะห่างระหว่างรายการ */
+  font-size: 16px; /* กำหนดขนาดตัวอักษร */
+  font-weight: bold;
+}
 .nav-links {
   display: flex; /* ใช้ Flexbox สำหรับเมนู */
 }
-
 .menu-icon {
   display: none; /* ซ่อนไอคอน hamburger ในหน้าจอใหญ่ */
 }
 
+/******************************************* ขนาดหน้าจอ ****************************************/
+
+@media screen and (max-width: 1300px) {
+  /***********Navigation bar******************/
+  #supanut {
+    padding-left: 0px;
+  }
+  /******* รูปภาพบนหน้าจอ *****/
+  .image-container {
+    grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ */
+  }
+  .image-section:nth-child(2) {
+    font-size: 55px; /* ปรับขนาดข้อความให้เล็กลง */
+  }
+  .image-section:nth-child(3) {
+    font-size: 80px; /* ขนาดใหญ่สุด */
+  }
+  .image-section:nth-child(4) {
+    font-size: 45px; /* ขนาดเล็ก */
+  }
+  /******* About Me *****/
+  .grid-container-aboutme {
+    padding: 5px 50px; /* ลดขนาด padding ข้าง */
+  }
+  .about-me {
+    padding: 35px;
+  }
+  .aboutme-paragraph p,
+  .contact-info-box h3,
+  .contact-info-box p {
+    font-size: 24px;
+  }
+  /******* Education *****/
+  .grid-container-big {
+    padding: 5px 50px; /* ลดขนาด padding ข้าง */
+  }
+  .Header {
+    padding: 35px;
+  }
+}
+
 @media screen and (max-width: 800px) {
+  /******* Navigaton bar *****/
   nav {
     display: block;
   }
-  .supanut {
+  #supanut {
     display: inline-block;
-    padding-left: 0px; /* เพิ่มระยะห่างทางซ้าย */
   }
   .nav-links {
     display: none; /* ซ่อนเมนูเมื่อหน้าจอมีขนาดเล็กกว่า 800px */
@@ -73,18 +111,18 @@ nav a {
     display: inline-block; /* แสดงไอคอน hamburger เมื่อหน้าจอเล็กกว่า 800px */
     cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อเอาเมาส์ไปวางที่ไอคอน */
     font-size: 30px; /* ขนาดไอคอน */
-    color: white; /* สีของไอคอน */
+    color: gray; /* เปลี่ยนสีตัวอักษรเป็นสีเทา */
     padding: 10px; /* ระยะห่างภายในไอคอน */
   }
   .nav-links.active {
     display: flex; /* แสดงเมนูเมื่อคลิกไอคอน hamburger */
     flex-direction: column; /* จัดเมนูเป็นแนวตั้ง */
-    background-color: #333; /*กำหนดพื้นหลังเป็นสีเทาเข้ม */
+    background-color: #ffffff; /*กำหนดพื้นหลังเป็นสีเทาเข้ม */
     text-align: center; /* จัดข้อความให้อยู่กลาง */
   }
   .menu-icon.active {
     display: flex;
-    background-color: #333;
+    background-color: #ffffff;
     text-align: center; /* จัดข้อความให้อยู่กลาง */
     flex-direction: column; /* จัดเมนูเป็นแนวตั้ง */
   }
@@ -96,11 +134,59 @@ nav a {
   .nav-container.active {
     flex-direction: column;
   }
+
+  /******* รูปภาพบนหน้าจอ *****/
+  .image-container {
+    grid-template-columns: 1fr;
+  }
+
+  .image-section:nth-child(2) {
+    font-size: 40px; /* ปรับขนาดข้อความให้เล็กที่สุด */
+  }
+
+  .image-section:nth-child(3) {
+    font-size: 60px; /* ขนาดใหญ่สุด */
+  }
+
+  .image-section:nth-child(4) {
+    font-size: 34px; /* ขนาดเล็กที่สุด */
+  }
+  /******* About Me *****/
+  .grid-container-aboutme {
+    grid-template-columns: 1fr; /* ให้คอลัมน์เดียวสำหรับหน้าจอเล็ก */
+    padding: 5px 5px;
+  }
+  .about-me {
+    padding: 20px;
+  }
+  .right-side {
+    display: none; /* ซ่อนส่วนขวา */
+  }
+  .left-side {
+    width: 100%; /* กินพื้นที่เต็มคอลัมน์ */
+  }
+  .aboutme-paragraph p,
+  .contact-info-box h3,
+  .contact-info-box p {
+    font-size: 16px;
+  }
+  /******* Education *****/
+  .grid-container-big {
+    padding: 5px 20px;
+  }
+  .Header {
+    padding: 20px;
+  }
+  .firstInfo {
+    font-size: 16px;
+  }
+  .secondInfo {
+    font-size: 14px;
+  }
 }
-section {
-  height: 500px; /* กำหนดความสูงของแต่ละ section เพื่อทดสอบการเลื่อนหน้า */
-  padding: 20px; /* กำหนดระยะห่างภายใน */
-  text-align: center; /* จัดข้อความให้อยู่กลาง */
-  font-size: 30px; /* ขนาดตัวอักษร */
-  border: 1px solid #ccc; /* ขอบของแต่ละ section */
+
+@media screen and (min-width: 801px) {
+  .nav-menu-icon {
+    display: none; /* ซ่อนไอคอนเมนู เมื่ออยู่ในหน้าจอใหญ่ */
+  }
 }
