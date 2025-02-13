@@ -31,17 +31,39 @@ function typeEffect() {
   }
   setTimeout(typeEffect, 150); // ความเร็วในการพิมพ์/ลบ
 }
+function checkScreenSize() {
+  const navLinks = document.querySelector(".nav-links");
+  const menuIcon = document.querySelector(".menu-icon");
+  const navContainer = document.querySelector(".nav-container");
 
+  // หากขนาดหน้าจอกว้างกว่า 1300px, ลบ class 'active' จาก .nav-links
+  if (window.innerWidth > 820) {
+    navLinks.classList.remove("active");
+    menuIcon.classList.remove("active");
+    navContainer.classList.remove("active");
+    console.log("Hello - Removed 'active' class");
+  }
+}
 typeEffect(); // เริ่มพิมพ์
 
 function toggleMenu() {
-  const navLinks = document.querySelector(".nav-links"); // ค้นหาเมนู
-  const menuIcon = document.querySelector(".menu-icon"); // ค้นหาปุ่ม hamburger
-  const navContainer = document.querySelector(".nav-container"); // ค้นหาปุ่ม hamburger
-  // Toggle active class to show/hide the menu
-  navLinks.classList.toggle("active"); // เพิ่มหรือลบ class 'active' เพื่อแสดงหรือซ่อนเมนู
+  const navLinks = document.querySelector(".nav-links");
+  const menuIcon = document.querySelector(".menu-icon");
+  const navContainer = document.querySelector(".nav-container");
 
+  // Toggle active class to show/hide the menu
+  navLinks.classList.toggle("active");
   // Toggle visibility of hamburger and close icons
-  menuIcon.classList.toggle("active"); // เพิ่มหรือลบ class 'active' ให้กับไอคอน hamburger
+  menuIcon.classList.toggle("active");
   navContainer.classList.toggle("active");
 }
+
+// เรียกใช้ checkScreenSize เมื่อโหลดหน้าเว็บ
+window.addEventListener("load", function () {
+  checkScreenSize();
+});
+
+// เรียกใช้ checkScreenSize เมื่อเปลี่ยนขนาดหน้าจอ
+window.addEventListener("resize", function () {
+  checkScreenSize();
+});
