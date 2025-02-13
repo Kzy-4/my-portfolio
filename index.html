@@ -7,31 +7,329 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <!-- คอนเทนเนอร์ที่ใช้ Flexbox เป็น Navigation Bar -->
-    <div class="container-navigator">
-      <div class="nav-box supanut">SUPANUT</div>
-      <div class="nav-menu">
-        <div class="nav-box">HOME</div>
-        <div class="nav-box">EDUCATION</div>
-        <div class="nav-box">SKILLS</div>
-        <div class="nav-box">WORK-EXPERIENCE</div>
-        <div class="nav-box">PROFILE</div>
-        <div class="nav-box">PROJECT</div>
-        <div class="nav-box">CONTACT</div>
+    <!-- Navigation bar -->
+    <nav>
+      <div class="nav-container">
+        <div><a id="supanut" href="#home">SUPANUT</a></div>
+        <div class="nav-links">
+          <a href="#about-me">ABOUT-ME</a>
+          <a href="#education">EDUCATION</a>
+          <a href="#skills">SKILLS</a>
+          <a href="#work-experience">WORK-EXPERIENCE</a>
+          <a href="#project">PROJECT</a>
+          <a href="#contact">CONTACT</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
       </div>
-      <div class="nav-menu-icon">☰</div>
-    </div>
-    <div class="image-container">
+    </nav>
+    <div id="home" class="image-container">
       <div class="image-box">
         <div class="image-section"></div>
+        <!-- ส่วนว่าง -->
         <div class="image-section">Hi , I Am</div>
+        <!-- ข้อความ "Hi , I Am" -->
         <div class="image-section">Supanut Khumduang</div>
+        <!-- ชื่อผู้ใช้ -->
         <div class="image-section" id="text">Software Engineer</div>
+        <!-- ข้อความ "Software Engineer" -->
         <div class="image-section"></div>
+        <!-- ส่วนว่าง -->
         <div class="image-section"></div>
+        <!-- ส่วนว่าง -->
       </div>
     </div>
+    <!----------------------------------------------------------------------- About me -->
+    <div id="about-me" class="grid-container-aboutme">
+      <!-- ส่วนข้างบน (2fr) -->
+      <div class="about-me">
+        <h1>About Me</h1>
+        <!-- หัวข้อ "About Me" -->
+      </div>
 
+      <!-- ส่วนซ้าย (2fr) -->
+      <div class="left-side">
+        <div class="aboutme-paragraph">
+          <p>
+            I graduated with a bachelor's degree in the Department of Control
+            Systems and Instrumentation Engineering from King Mongkut's
+            University of Technology Thonburi.
+          </p>
+          <!-- เนื้อหาเกี่ยวกับการศึกษาของผู้ใช้ -->
+          <p>
+            I previously worked as C&I Maintenance Engineer in a power plant for
+            about 2 years of experience.However, I am passionate about computers
+            and software programming, so I decided to go to a software career
+            path, I'm seeking a full-time job in a software career.
+          </p>
+          <!-- เนื้อหาประสบการณ์การทำงานและการเปลี่ยนสายงาน -->
+        </div>
+        <div class="contact-info">
+          <div class="contact-info-box">
+            <h3>Phone</h3>
+            <!-- ส่วนแสดงหมายเลขโทรศัพท์ -->
+            <p>(+66) 960417424</p>
+            <!-- หมายเลขโทรศัพท์ -->
+          </div>
+          <div class="contact-info-box">
+            <h3>Email</h3>
+            <!-- ส่วนแสดงอีเมล -->
+            <p>supanutkhumd@hotmail.com</p>
+            <!-- อีเมล -->
+          </div>
+          <div class="contact-info-box">
+            <h3>Website</h3>
+            <!-- ส่วนแสดงเว็บไซต์ -->
+            <p>www.Kzy.com</p>
+            <!-- เว็บไซต์ -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ส่วนขวา (1fr) -->
+      <div class="right-side">
+        <div class="picture-profile">
+          <img src="2.jpg" alt="Profile Image" />
+          <!-- รูปโปรไฟล์ -->
+        </div>
+      </div>
+    </div>
+    <!-- คอนเทนเนอร์ที่ใช้ เป็น Education box -->
+    <div id="education" class="grid-container-big gray-section">
+      <div class="Header">
+        <h1>Education</h1>
+      </div>
+      <div class="grid-container-medium">
+        <div class="grid-container-small">
+          <div class="image-icon-education">
+            <img src="book.png" alt="Book Icon" />
+          </div>
+          <div class="info-container">
+            <div class="firstInfo">
+              <span
+                >Bachelor Degree: Control system and Instrumentation Engineering
+                GPA: 3.55</span
+              >
+              <span class="latest-box">Latest</span>
+            </div>
+            <div class="secondInfo">Graduated June 2022</div>
+            <div class="secondInfo">
+              King Mongkut's university of technology thonburi
+            </div>
+          </div>
+        </div>
+        <div class="grid-container-small">
+          <div class="image-icon-education">
+            <img src="book.png" alt="Book Icon" />
+          </div>
+          <div class="info-container">
+            <div class="firstInfo">
+              <span>High School: Intensive English Program GPA: 3.50</span>
+            </div>
+            <div class="secondInfo">Graduated June 2018</div>
+            <div class="secondInfo">
+              Triamudomsuksanomklao Samutprakan School
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="skills" class="grid-container-big">
+      <div class="Header">
+        <h1>Skills</h1>
+      </div>
+      <div class="grid-container-medium">
+        <!-- First Education Entry (Bachelor's Degree) -->
+        <div class="grid-container-small">
+          <div class="image-icon-education">
+            <img src="skills.png" alt="Book Icon" />
+          </div>
+          <div class="info-container">
+            <div class="firstInfo">
+              <span>Software Development</span>
+            </div>
+            <div class="secondInfo">
+              <b>Programing Language :</b> C/C++ , Javascript , C# , MATLAB ,
+              Python , SQL
+            </div>
+            <div class="secondInfo"><b>Web Developmet:</b> HTML ,CSS</div>
+            <div class="secondInfo">
+              <b>Version control system:</b> Git / Github
+            </div>
+            <div class="secondInfo"><b>Microcontroller : </b>Arduino</div>
+          </div>
+        </div>
+        <div class="grid-container-small">
+          <div class="image-icon-education">
+            <img src="skills.png" alt="Book Icon" />
+          </div>
+          <div class="info-container">
+            <div class="firstInfo">
+              <span>Control system and Instrument Engineering</span>
+            </div>
+            <div class="secondInfo">
+              <b>Control systems :</b> Siemens ( PCS7 , WinCC ,SPPA-T3000 )
+            </div>
+            <div class="secondInfo">
+              <b>Instrumentations : </b> Basic Instrumentation engineering
+              maintenance and Control valve
+            </div>
+          </div>
+        </div>
+        <div class="grid-container-small">
+          <div class="image-icon-education">
+            <img src="skills.png" alt="Book Icon" />
+          </div>
+          <div class="info-container">
+            <div class="firstInfo">
+              <span>Soft Skills</span>
+            </div>
+            <div class="secondInfo">
+              <b>Language :</b> Thai (Native) , English (TOEIC 680)
+            </div>
+            <div class="secondInfo">
+              <b>Soft skills : </b> Punctual , Growth mindset , Open minded
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="work-experience" class="grid-container-big gray-section">
+      <div class="Header">
+        <h1>Work Experiences</h1>
+      </div>
+      <div class="grid-container-medium">
+        <div class="grid-container-small">
+          <div class="image-icon-education">
+            <img src="works.png" alt="Book Icon" />
+          </div>
+          <div class="info-container">
+            <div class="firstInfo">
+              <span>Control system and Instrumentation Engineering</span>
+              <span class="latest-box">Latest</span>
+            </div>
+            <div class="secondInfo">
+              <b>Company :</b> Gulf JP NLL (Power plant)
+            </div>
+            <div class="secondInfo">
+              <b>Responsibility</b> for maintain , analyzing ,troubleshooting
+              and calibrating of all instrument equipment and control system as
+              PLC DCS.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Projects -->
+    <div id="project" class="grid-container-big">
+      <div class="Header">
+        <h1>Projects</h1>
+      </div>
+      <div class="grid-container-medium">
+        <div class="grid-container-small">
+          <div class="image-icon-education">
+            <img src="idea.png" alt="Book Icon" />
+          </div>
+          <div class="info-container">
+            <div class="firstInfo">
+              <span>VR bike</span>
+              <span class="latest-box">Graduated Project</span>
+            </div>
+            <div class="secondInfo">
+              <p>
+                The goal of this project is to create a prototype for an
+                exercise game (exer-game) that combines Virtual Reality (VR)
+                game technology with physical exercise, providing an immersive
+                and interactive workout experience.
+              </p>
+              <ul>
+                <li>
+                  Responsible for the hardware installation to integrate sensors
+                  and devices for the exer-game.
+                </li>
+                <li>
+                  Using C++ to process and compute sensor data and Unity C# for
+                  communication between controller and game By bluetooth
+                  technology
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="grid-container-small">
+          <div class="image-icon-education">
+            <img src="idea.png" alt="Book Icon" />
+          </div>
+          <div class="info-container">
+            <div class="firstInfo">
+              <span>DCS Modification Projects</span>
+              <span class="latest-box">SPPA-T3000 (Siemens DCS)</span>
+            </div>
+            <div class="secondInfo">
+              <p>
+                1. Modification of signal input from conductivity to flow
+                control valve project
+              </p>
+              <p>2. LP Drum level control during start up project</p>
+              <ul>
+                <li>
+                  To decrease loss of demin water that feed LP drum during start
+                  up
+                </li>
+                <li>To change minimum open setting of LP feed control valve</li>
+              </ul>
+              <p>3. Block Load Control During Half block operate project</p>
+              <ul>
+                <li>To use block load control during half block operate</li>
+                <li>
+                  modify logic and HMI graphic to build a new function in power
+                  plant
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Contact -->
+    <div id="contact" class="grid-container-big gray-section">
+      <div class="Header">
+        <h1>Contact</h1>
+      </div>
+      <div class="grid-container-medium">
+        <!-- First Education Entry (Bachelor's Degree) -->
+        <div class="grid-container-small">
+          <div class="image-icon-education">
+            <img src="telephone.png" alt="Book Icon" />
+          </div>
+          <div class="info-container">
+            <div class="firstInfo">
+              <span>Phone</span>
+            </div>
+            <div class="secondInfo">
+              <ul>
+                <li>(+66) 960417424</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="grid-container-small">
+          <div class="image-icon-education">
+            <img src="mail.png" alt="Book Icon" />
+          </div>
+          <div class="info-container">
+            <div class="firstInfo">
+              <span>Email</span>
+            </div>
+            <div class="secondInfo">
+              <ul>
+                <li>supanutkhumd@hotmail.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
+    <!-- เชื่อมโยงกับไฟล์ JavaScript -->
   </body>
 </html>

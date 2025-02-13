@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* กำหนดให้ทุกกล่องใช้ขนาดเท่ากัน โดยไม่คำนึงถึง margin หรือ padding */
+}
+
+/* กำหนด Font ของตัวอักษร */
+body {
+  font-family: "Fira Code", "JetBrains Mono", "IBM Plex Mono", monospace; /* ใช้ฟอนต์ monospaced */
+  transition: font-size 0.5s ease; /* ทำให้การเปลี่ยนขนาดตัวอักษรมีความสมูท */
+}
+
+/* กำหนดสไตล์ของคอนเทนเนอร์ให้เป็น Navigation Bar */
+nav {
+  position: fixed; /* ติดแถบนำทางที่ด้านบนของหน้า */
+  top: 0; /* ตำแหน่งอยู่ที่ด้านบนสุด */
+  left: 0; /* ตำแหน่งอยู่ที่ด้านซ้ายสุด */
+  width: 100%; /* กำหนดความกว้างของแถบเมนูให้เต็มหน้าจอ */
+  background-color: #333; /* กำหนดพื้นหลังเป็นสีเทาเข้ม */
+  display: flex; /* ใช้ Flexbox เพื่อจัดการตำแหน่งของรายการในแถบเมนู */
+  justify-content: space-evenly; /* จัดตำแหน่งรายการเมนูให้ห่างกัน */
+  align-items: center; /* จัดรายการให้อยู่กลางแนวตั้ง */
+  z-index: 1000; /* ให้แถบนำทางอยู่ด้านบนสุด */
+  border-bottom: 1px solid rgb(1, 1, 31);
+  height: 60px; /* กำหนดความสูงของ Navigation Bar */
+}
+.nav-container {
+  display: flex;
+  justify-content: space-evenly; /* จัดตำแหน่งรายการเมนูให้ห่างกัน */
+  align-items: center; /* จัดรายการให้อยู่กลางแนวตั้ง */
+  background-color: #333; /* กำหนดพื้นหลังเป็นสีเทาเข้ม */
+  width: 100%; /* กำหนดความกว้างของแถบเมนูให้เต็มหน้าจอ */
+}
+/* กำหนดสไตล์ของกล่องทั่วไป */
+nav a {
+  color: gray; /* เปลี่ยนสีตัวอักษรเป็นสีเทา */
+  text-decoration: none; /* เอาเส้นใต้ในเมนูออก */
+  margin: 0 20px; /* กำหนดระยะห่างระหว่างรายการ */
+  font-size: 18px; /* กำหนดขนาดตัวอักษร */
+  font-weight: bold;
+}
+
+#supanut {
+  font-size: 30px; /* ทำให้ตัวอักษรใหญ่ขึ้น */
+  color: rgb(29, 43, 240); /* เปลี่ยนสีตัวอักษรเป็นสีม่วง */
+  font-weight: bold; /* ทำให้ตัวอักษรหนา */
+  padding-left: 40px; /* เพิ่มระยะห่างทางซ้าย */
+}
+
+.nav-links {
+  display: flex; /* ใช้ Flexbox สำหรับเมนู */
+}
+
+.menu-icon {
+  display: none; /* ซ่อนไอคอน hamburger ในหน้าจอใหญ่ */
+}
+
+@media screen and (max-width: 800px) {
+  nav {
+    display: block;
+  }
+  .supanut {
+    display: inline-block;
+    padding-left: 0px; /* เพิ่มระยะห่างทางซ้าย */
+  }
+  .nav-links {
+    display: none; /* ซ่อนเมนูเมื่อหน้าจอมีขนาดเล็กกว่า 800px */
+  }
+  .nav-links a {
+    margin: 15px 0; /* กำหนดระยะห่างระหว่างรายการเมนู */
+  }
+  .menu-icon {
+    display: inline-block; /* แสดงไอคอน hamburger เมื่อหน้าจอเล็กกว่า 800px */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อเอาเมาส์ไปวางที่ไอคอน */
+    font-size: 30px; /* ขนาดไอคอน */
+    color: white; /* สีของไอคอน */
+    padding: 10px; /* ระยะห่างภายในไอคอน */
+  }
+  .nav-links.active {
+    display: flex; /* แสดงเมนูเมื่อคลิกไอคอน hamburger */
+    flex-direction: column; /* จัดเมนูเป็นแนวตั้ง */
+    background-color: #333; /*กำหนดพื้นหลังเป็นสีเทาเข้ม */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+  }
+  .menu-icon.active {
+    display: flex;
+    background-color: #333;
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    flex-direction: column; /* จัดเมนูเป็นแนวตั้ง */
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-evenly; /* จัดตำแหน่งรายการเมนูให้ห่างกัน */
+    align-items: center; /* จัดรายการให้อยู่กลางแนวตั้ง */
+  }
+  .nav-container.active {
+    flex-direction: column;
+  }
+}
+section {
+  height: 500px; /* กำหนดความสูงของแต่ละ section เพื่อทดสอบการเลื่อนหน้า */
+  padding: 20px; /* กำหนดระยะห่างภายใน */
+  text-align: center; /* จัดข้อความให้อยู่กลาง */
+  font-size: 30px; /* ขนาดตัวอักษร */
+  border: 1px solid #ccc; /* ขอบของแต่ละ section */
+}

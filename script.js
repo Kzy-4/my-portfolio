@@ -33,3 +33,15 @@ function typeEffect() {
 }
 
 typeEffect(); // เริ่มพิมพ์
+
+function toggleMenu() {
+  const navLinks = document.querySelector(".nav-links"); // ค้นหาเมนู
+  const menuIcon = document.querySelector(".menu-icon"); // ค้นหาปุ่ม hamburger
+  const navContainer = document.querySelector(".nav-container"); // ค้นหาปุ่ม hamburger
+  // Toggle active class to show/hide the menu
+  navLinks.classList.toggle("active"); // เพิ่มหรือลบ class 'active' เพื่อแสดงหรือซ่อนเมนู
+
+  // Toggle visibility of hamburger and close icons
+  menuIcon.classList.toggle("active"); // เพิ่มหรือลบ class 'active' ให้กับไอคอน hamburger
+  navContainer.classList.toggle("active");
+}
