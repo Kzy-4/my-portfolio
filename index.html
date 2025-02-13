@@ -7,28 +7,22 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <!-- คอนเทนเนอร์ที่ใช้ Flexbox เป็น Navigation Bar -->
-    <div class="container-navigator">
-      <div class="nav-box supanut">SUPANUT</div>
-      <!-- ชื่อของผู้ใช้ -->
-      <div class="nav-menu">
-        <div class="nav-box">HOME</div>
-        <!-- เมนู Home -->
-        <div class="nav-box">EDUCATION</div>
-        <!-- เมนู Education -->
-        <div class="nav-box">SKILLS</div>
-        <!-- เมนู Skills -->
-        <div class="nav-box">WORK-EXPERIENCE</div>
-        <!-- เมนู Work Experience -->
-        <div class="nav-box">PROJECT</div>
-        <!-- เมนู Project -->
-        <div class="nav-box">CONTACT</div>
-        <!-- เมนู Contact -->
+    <!-- Navigation bar -->
+    <nav>
+      <div class="nav-container">
+        <div><a id="supanut" href="#home">SUPANUT</a></div>
+        <div class="nav-links">
+          <a href="#about-me">ABOUT-ME</a>
+          <a href="#education">EDUCATION</a>
+          <a href="#skills">SKILLS</a>
+          <a href="#work-experience">WORK-EXPERIENCE</a>
+          <a href="#project">PROJECT</a>
+          <a href="#contact">CONTACT</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
       </div>
-      <div class="nav-menu-icon">☰</div>
-      <!-- ไอคอนเมนู -->
-    </div>
-    <div class="image-container">
+    </nav>
+    <div id="home" class="image-container">
       <div class="image-box">
         <div class="image-section"></div>
         <!-- ส่วนว่าง -->
@@ -45,7 +39,7 @@
       </div>
     </div>
     <!----------------------------------------------------------------------- About me -->
-    <div class="grid-container-aboutme">
+    <div id="about-me" class="grid-container-aboutme">
       <!-- ส่วนข้างบน (2fr) -->
       <div class="about-me">
         <h1>About Me</h1>
@@ -100,7 +94,7 @@
       </div>
     </div>
     <!-- คอนเทนเนอร์ที่ใช้ เป็น Education box -->
-    <div class="grid-container-big gray-section">
+    <div id="education" class="grid-container-big gray-section">
       <div class="Header">
         <h1>Education</h1>
       </div>
@@ -139,7 +133,7 @@
         </div>
       </div>
     </div>
-    <div class="grid-container-big">
+    <div id="skills" class="grid-container-big">
       <div class="Header">
         <h1>Skills</h1>
       </div>
@@ -199,7 +193,7 @@
         </div>
       </div>
     </div>
-    <div class="grid-container-big gray-section">
+    <div id="work-experience" class="grid-container-big gray-section">
       <div class="Header">
         <h1>Work Experiences</h1>
       </div>
@@ -226,7 +220,7 @@
       </div>
     </div>
     <!-- Projects -->
-    <div class="grid-container-big">
+    <div id="project" class="grid-container-big">
       <div class="Header">
         <h1>Projects</h1>
       </div>
@@ -297,7 +291,7 @@
       </div>
     </div>
     <!-- Contact -->
-    <div class="grid-container-big gray-section">
+    <div id="contact" class="grid-container-big gray-section">
       <div class="Header">
         <h1>Contact</h1>
       </div>
